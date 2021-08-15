@@ -1,7 +1,8 @@
-# Welcome to your Jupyter Book
+# Bienvenida
 
-This is a small sample book to give you a feel for how book content is
-structured.
+Este es un curso sobre procesamiento de datos geoespaciales con el lenguaje de programación [Python](https://www.python.org/).
+
+El curso fue preparado para el personal del [Instituto Meteorológico Nacional (IMN)](https://www.imn.ac.cr/).
 
 :::{note}
 Here is a note!
@@ -12,5 +13,3 @@ And here is a code block:
 ```
 e = mc^2
 ```
-
-Check out the content pages bundled with this sample book to see more.
