@@ -1,0 +1,3 @@
+# 01-Pensamiento computacional
+
+El pensamiento computacional ...
