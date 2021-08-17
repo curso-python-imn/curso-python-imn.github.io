@@ -33,7 +33,7 @@ $ jupyter-book build curso-python-imn
 
 # En este punto, se crea en GitHub el repositorio curso-python-imn.github.io
 
-# Configuración del repositorio local
+# Configuración del repositorio local y su branch main (para manejar los archivos fuente)
 $ cd curso-python-imn
 $ git init
 $ git add .
@@ -42,7 +42,7 @@ $ git branch -M main
 $ git remote add origin https://github.com/curso-python-imn/curso-python-imn.github.io.git
 $ git push -u origin main
 
-# Creación del branch gh-pages
+# Creación del branch gh-pages (para manejar los archivos HTML publicados)
 ghp-import -n -p -f _build/html
 
 # En este punto, se configura el repositorio para buscar los archivos de GH Pages en la rama gh-pages
@@ -52,16 +52,17 @@ ghp-import -n -p -f _build/html
 ## Publicación de modificaciones
 
 ```shell
+# Generación de archivos HTML
 $ jupyter-book build curso-python-imn
 
 $ cd curso-python-imn
 
-# Branch main
+# Aplicación de cambios en el branch main
 $ git status
 $ git add .
 $ git commit -m "###Comentario###"
 $ git push
 
-# Branch gh-pages
+# Aplicación de cambios en el branch gh-pages
 $ ghp-import -n -p -f _build/html
 ```
