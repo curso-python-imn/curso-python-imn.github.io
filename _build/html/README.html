@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bienvenida &#8212; Procesamiento de datos geoespaciales en Python</title>
+    <title>Configuración inicial &#8212; Procesamiento de datos geoespaciales en Python</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,8 +81,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Bienvenida
   </a>
  </li>
@@ -140,7 +139,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -160,7 +159,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -181,6 +180,36 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Configuración inicial
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creacion-de-un-ambiente-conda">
+     Creación de un ambiente Conda
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creacion-del-jupyter-book-y-publicacion-inicial-del-sitio-web">
+     Creación del Jupyter Book y publicación inicial del sitio web
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publicacion-de-modificaciones">
+   Publicación de modificaciones
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -189,19 +218,74 @@
         
               <div>
                 
-  <div class="section" id="bienvenida">
-<h1>Bienvenida<a class="headerlink" href="#bienvenida" title="Permalink to this headline">¶</a></h1>
-<p>Este es un curso introductorio al procesamiento de datos geoespaciales mediante el lenguaje de programación <a class="reference external" href="https://www.python.org/">Python</a>, incluyendo su aplicación al procesamiento de datos geoespaciales. Los estudiantes no requieren de conocimientos previos en programación de computadoras. Es recomendable contar con conocimientos básicos de sistemas de información geográfica (SIG). El enfoque del curso es teórico-práctico, con lecciones teóricas combinadas con ejercicios de programación en los cuales los estudiantes aplicarán en diversos escenarios, particularmente en el análisis de riesgo ante eventos hidrometeorológicos extremos, los conocimientos adquiridos.</p>
-<p>El curso fue preparado para el personal del <a class="reference external" href="https://www.imn.ac.cr/">Instituto Meteorológico Nacional (IMN)</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note!</p>
-</div>
-<p>And here is a code block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
+  <div class="section" id="configuracion-inicial">
+<h1>Configuración inicial<a class="headerlink" href="#configuracion-inicial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creacion-de-un-ambiente-conda">
+<h2>Creación de un ambiente Conda<a class="headerlink" href="#creacion-de-un-ambiente-conda" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actualización de Conda</span>
+$ conda update -n base -c defaults conda
+
+<span class="c1"># Creación del ambiente</span>
+$ conda create -n curso-python-imn
+
+<span class="c1"># Activación del ambiente</span>
+$ conda activate curso-python-imn
+
+<span class="c1"># Instalación de módulos</span>
+$ conda config --env --add channels conda-forge
+$ conda config --env --set channel_priority strict
+$ conda install jupyter-book
+$ conda install ghp-import
+
+<span class="c1"># Desactivación del ambiente</span>
+$ conda deactivate
 </pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="creacion-del-jupyter-book-y-publicacion-inicial-del-sitio-web">
+<h2>Creación del Jupyter Book y publicación inicial del sitio web<a class="headerlink" href="#creacion-del-jupyter-book-y-publicacion-inicial-del-sitio-web" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creación del Jupyter Book</span>
+$ jupyter-book create curso-python-imn
+
+<span class="c1"># Generación de archivos HTML (en el subdirectorio _build/html)</span>
+$ jupyter-book build curso-python-imn
+
+<span class="c1"># En este punto, se crea en GitHub el repositorio curso-python-imn.github.io</span>
+
+<span class="c1"># Configuración del repositorio local y su branch main (para manejar los archivos fuente)</span>
+$ <span class="nb">cd</span> curso-python-imn
+$ git init
+$ git add .
+$ git commit -m <span class="s2">&quot;Commit inicial&quot;</span>
+$ git branch -M main
+$ git remote add origin https://github.com/curso-python-imn/curso-python-imn.github.io.git
+$ git push -u origin main
+
+<span class="c1"># Creación del branch gh-pages (para manejar los archivos HTML publicados)</span>
+ghp-import -n -p -f _build/html
+
+<span class="c1"># En este punto, se configura el repositorio para buscar los archivos de GH Pages en la rama gh-pages</span>
+<span class="c1"># El sitio debe estar disponible en https://curso-python-imn.github.io/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="publicacion-de-modificaciones">
+<h1>Publicación de modificaciones<a class="headerlink" href="#publicacion-de-modificaciones" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generación de archivos HTML</span>
+$ jupyter-book build curso-python-imn
+
+$ <span class="nb">cd</span> curso-python-imn
+
+<span class="c1"># Aplicación de cambios en el branch main</span>
+$ git status
+$ git add .
+$ git commit -m <span class="s2">&quot;###Comentario###&quot;</span>
+$ git push
+
+<span class="c1"># Aplicación de cambios en el branch gh-pages</span>
+$ ghp-import -n -p -f _build/html
+</pre></div>
 </div>
 </div>
 
@@ -230,7 +314,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">Markdown Files</a>
 
         </div>
         
