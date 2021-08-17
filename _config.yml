@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Procesamiento de datos geoespaciales en Python
+title: Procesamiento de datos geoespaciales con Python
 author: Manuel Vargas
 logo: logo.png
 
