@@ -17,6 +17,9 @@ Modelo entrada - procesamiento - salida
 Por ejemplo, el siguiente programa, implementado en el leguaje de programación [Python](https://www.python.org/), recibe como entrada una lista de números, la recorre y retorna como salida el número con el valor máximo.
 
 ```python
+# Programa que encuentra el valor máximo de una lista de números
+
+
 # Entrada
 lista = [29.6, -36.81, 31.85, 25.71, 90.2, 0.4]
 print("Lista de entrada: ", lista)
