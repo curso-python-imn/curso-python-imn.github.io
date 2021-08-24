@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Procesamiento de datos geoespaciales con Python</title>
+    <title>Recursos &#8212; Procesamiento de datos geoespaciales con Python</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,8 +49,9 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Scratch" href="03-scratch.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,7 +88,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-arquitecturacomputadoras.html">
    Arquitectura de computadoras
@@ -103,8 +104,8 @@
    Scratch
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="recursos.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Recursos
   </a>
  </li>
@@ -141,6 +142,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/recursos.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -152,7 +170,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2Frecursos.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -173,6 +191,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pensamiento-computacional">
+   Pensamiento computacional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scratch">
+   Scratch
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -181,19 +217,51 @@
         
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="recursos">
+<h1>Recursos<a class="headerlink" href="#recursos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pensamiento-computacional">
+<h2>Pensamiento computacional<a class="headerlink" href="#pensamiento-computacional" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.coursera.org/learn/computational-thinking-problem-solving">Computational Thinking for Problem Solving</a></p></li>
+<li><p><a class="reference external" href="https://www.edx.org/course/cs50s-introduction-to-computer-science">CS50’s Introduction to Computer Science</a></p></li>
+<li><p><a class="reference external" href="https://computationalthinking.mit.edu/">Introduction to Computational Thinking</a></p></li>
+</ul>
+</div>
+<div class="section" id="scratch">
+<h2>Scratch<a class="headerlink" href="#scratch" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scratch.mit.edu/">Scratch - Imagine, Program, Share</a></p></li>
+<li><p><a class="reference external" href="https://www.edx.org/course/cs50s-introduction-to-programming-with-scratch">CS50’s Introduction to Programming with Scratch</a></p></li>
+</ul>
+</div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="03-scratch.html" title="previous page">Scratch</a>
 
         </div>
         
