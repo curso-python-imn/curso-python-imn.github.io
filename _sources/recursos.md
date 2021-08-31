@@ -1,5 +1,11 @@
 # Recursos
 
+## Markdown
+- [Daring Fireball: Markdown](https://daringfireball.net/projects/markdown/)
+- [Markdown Tutorial](https://www.markdowntutorial.com/)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
 ## Pensamiento computacional
 - [Computational Thinking for Problem Solving](https://www.coursera.org/learn/computational-thinking-problem-solving)
 - [CS50's Introduction to Computer Science](https://www.edx.org/course/cs50s-introduction-to-computer-science)
