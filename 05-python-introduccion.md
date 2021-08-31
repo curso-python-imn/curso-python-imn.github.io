@@ -5,7 +5,6 @@ En este capítulo, se introduce el lenguaje de programación Python.
 ## El lenguaje de programación Python
 
 ### Acerca de Python
-----------------------
 [Python](https://www.python.org/) es un lenguaje de programación de propósito general que ha alcanzado una [gran popularidad en los últimos años](https://www.infoworld.com/article/3331603/pythons-popularity-surges-as-a-mainstay-language.html). Fue declarado el lenguaje del año 2018 por el índice [Tiobe](https://www.tiobe.com/tiobe-index/) de popularidad de lenguajes de programación, debido al crecimiento de su uso en diversas áreas, entre las que destacan la [ciencia de datos](https://en.wikipedia.org/wiki/Data_science) y el [aprendizaje de máquinas](https://en.wikipedia.org/wiki/Machine_learning), además de otras como desarrollo web, _scripting_ y visualización de datos, entre muchas. Esta popularidad es respaldada por otras fuentes como el índice [PYPL](http://pypl.github.io/PYPL.html) y la comunidad de programadores [Stack Overflow](https://stackoverflow.com/). Esta última lo considera el [lenguaje de programación de mayor crecimiento en los países de alto ingreso](https://stackoverflow.blog/2017/09/06/incredible-growth-python/?_ga=2.202250515.367846061.1552160385-2089845565.1546395318), como se muestra en la {numref}`figura-crecimiento-lenguajes`.
 
 ```{figure} img/growth_major_languages.png
@@ -19,7 +18,7 @@ En la actualidad, Python es ampliamente utilizado en enseñanza de la programaci
 ```{figure} img/top-languajes-universities.png
 :name: figura-lenguajes-universidades
 
-Lenguajes de programación utilizados en los departamentos de ciencias de la computación de las principales universidades de Estados Unidos.<br>Fuente: [Guo (2014)](https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext).
+Lenguajes de programación utilizados en los departamentos de ciencias de la computación de las principales universidades de Estados Unidos. Fuente: [Guo (2014)](https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext).
 ```
 
 Este uso en enseñanza se debe, entre otras razones, a que los programas en Python son más fáciles de leer y requieren menos líneas de [código fuente](https://en.wikipedia.org/wiki/Source_code) que otros lenguajes de amplia difusión, tales como [Java](http://oracle.com/java/), [C](https://en.wikipedia.org/wiki/C_(programming_language)) o [C++](https://isocpp.org/).
@@ -58,11 +57,13 @@ La implementación de referencia del interpretador de Python, llamada [CPython](
 #### Aplicación en datos geoespaciales
 Python ha tomado una gran importancia en el área del desarrollo de aplicaciones geoespaciales debido a su popularidad, "suavidad" de la curva de aprendizaje y abundancia de recursos de educación y consulta (ej. tutoriales, libros, listas de correo, foros de discusión). Todas estas son características que, entre otras, lo hacen muy apropiado para programadores que no son especialistas en ciencias de la computación, como es el caso de muchos de los usuarios de sistemas de información geográfica (SIG). De hecho, muchas de estas herramientas han seleccionado a [Python como el lenguaje de preferencia para que sus usuarios amplíen o configuren la funcionalidad que ofrecen](http://www.mdpi.com/2220-9964/2/1/201). Como ejemplos, pueden mencionarse las bibliotecas [ArcPy](http://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy/what-is-arcpy-.htm) para [ArcGIS](https://www.arcgis.com/), [PyQGIS](https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/) para [QGIS](https://www.qgis.org/) y [PyGRASS](https://grass.osgeo.org/grass70/manuals/libpython/pygrass_index.html) para [GRASS GIS](https://grass.osgeo.org/). De manera similar, hay una gran cantidad de bibliotecas que ofrecen funciones geoespaciales que pueden ser utilizadas por cualquier otra herramienta. Entre estas, pueden mencionarse [GDAL/OGR](http://www.gdal.org/), para conversiones entre diferentes formatos vectoriales y raster; [PROJ](http://proj4.org/), para transformaciones entre sistemas de coordenadas y [GeoPandas](http://geopandas.org/), para análisis geoespacial. Muchas de estas bibliotecas son distribuidas con licencias de [software libre (_free software_)](https://en.wikipedia.org/wiki/Free_software).
 
-En la figura 5, puede observarse como Python es ampliamente utilizado como lenguaje de _scripting_ en SIG.
+En la {numref}`figura-python-gis`, puede observarse como Python es ampliamente utilizado como lenguaje de _scripting_ en SIG.
 
-| ![](img/python-gis-software.png) |
-|:---:|
-| Figura 5. Uso de Python en SIG.<br>Fuente: [Zambelli et al. (2013)](http://www.mdpi.com/2220-9964/2/1/201).|
+```{figure} img/python-gis-software.png
+:name: figura-python-gis
+
+Uso de Python en SIG. Fuente: [Zambelli et al. (2013)](http://www.mdpi.com/2220-9964/2/1/201).
+```
 
 #### Python 2 y Python 3
 La versión 3 de Python fue liberada en 2008 y tiene diferencias en su sintaxis que la hacen incompatible con la versión 2. Desde entonces, se recomienda la migración de los programas en Python 2 a Python 3 y el uso de Python 3 para el desarrollo de nuevas aplicaciones. [La versión 2 no recibirá más soporte a partir de 2020](https://www.python.org/dev/peps/pep-0373/). La PSF proporciona una [guía oficial para migrar programas de Python 2 a Python 3](https://docs.python.org/3/howto/pyporting.html).
@@ -75,39 +76,34 @@ Hay tres principales tipos de herramientas para elaborar programas en Python: ed
 ### Editores de texto
 Son editores para cualquier tipo de archivo de texto. Aquí se presentan los que proveen algunas facilidades para la edición de código fuente (ej. colores para diferenciar palabras clave o tabulación automática). Son fáciles de utilizar, pero no aportan mayores facilidades para el proceso de desarrollo. Son apropiados para programas pequeños y de no muy alta complejidad. Algunos de los más populares son:
 
+* [Visual Studio Code](https://code.visualstudio.com/)
 * [Atom](https://atom.io/)
 * [Sublime Text](https://www.sublimetext.com/)
 * [Notepad++](https://notepad-plus-plus.org/)
 
 **NOTA:** no se deben editar programas con procesadores de texto como Microsoft Word o LibreOffice Writer, ya que pueden añadir caracteres especiales que no "entienden" los interpretadores ni los compiladores. 
 
-#### Ambientes integrados de desarrollo
+### Ambientes integrados de desarrollo
 Un [ambiente integrado de desarrollo (_Integrated Development Environment_ [IDE])](https://en.wikipedia.org/wiki/Integrated_development_environment), es una aplicación informática provee soporte integrado al proceso de programación. Típicamente, consiste de un editor de texto para el código fuente, [herramientas para la construcción de archivos ejecutables](https://en.wikipedia.org/wiki/Build_automation) y un [depurador (_debugger_)](https://en.wikipedia.org/wiki/Debugger). Facilitan la elaboración de proyectos de mayor tamaño y complejidad. En el caso de Python, los IDE más populares son:
 
 * [PyCharm](https://www.jetbrains.com/pycharm/)
 * [Spyder](https://docs.spyder-ide.org/)
 
-#### Notebooks
-Son ambientes virtuales que combinan código fuente con texto, gráficos, videos y otros formatos. Se les considera muy apropiados para aprendizaje. El _notebook_ más popular es el [Jupyter Notebook](https://jupyter.org/), el cual proporciona una interfaz en ambiente web que permite la elaboración de documentos que permiten la ejecución interactiva de comandos en varios lenguajes (Python, R, Julia y Haskell, entre otros) y su documentación con el lenguaje de marcas [Markdown](https://daringfireball.net/projects/markdown/).
+### Notebooks
+Son ambientes virtuales que combinan código fuente con texto, gráficos, videos y otros formatos. Se les considera muy apropiados para aprendizaje. El _notebook_ más popular es el [Jupyter Notebook](https://jupyter.org/), el cual proporciona una interfaz en ambiente web que permite la elaboración de documentos que permiten la ejecución interactiva de comandos en varios lenguajes (Python, R, Julia y Haskell, entre otros) y su documentación con el lenguaje de marcado [Markdown](https://daringfireball.net/projects/markdown/).
 
 ## Instalación del interpretador de Python
 El interpretador de Pyhon puede obtenerse de varias formas. Una de la más usuales es en la [página de descargas de Python.org](https://www.python.org/downloads/), en donde pueden obtenerse instaladores para los diferentes sistemas operativos.
 
-En este curso, se utilizará [Anaconda](https://www.anaconda.com/), una distribución libre y de código abierto de Python y de otras herramientas utilizadas para ciencia de datos, como el lenguaje de programación [R](https://www.r-project.org/). Anaconda simplifica el manejo de paquetes, con sus diferentes versiones y dependencias, y está preconfigurada con más de 1500 paquetes preinstalados, lo que elimina la necesidad de aprender a instalar cada uno individualmente. Anaconda incorpora también el administrador de paquetes [Conda](https://conda.io/).
+En este curso, se utilizará [Anaconda](https://www.anaconda.com/), una distribución libre y de código abierto de Python y de otras herramientas utilizadas para ciencia de datos, como el lenguaje de programación [R](https://www.r-project.org/). Anaconda simplifica el manejo de paquetes, con sus diferentes versiones y dependencias, y está preconfigurada con más de 1500 paquetes preinstalados, lo que elimina la necesidad de aprender a instalar cada uno individualmente. Anaconda incorpora también el administrador de paquetes [Conda](https://conda.io/). Como alternativa a Anaconda, puede utilizarse [Miniconda](https://docs.conda.io/en/latest/miniconda.html), un instalador reducido de Anaconda.
 
-#### Instalación de Anaconda
-La [página de descargas de Anaconda](https://www.anaconda.com/distribution/) proporciona instaladores para las diferentes versiones de Python y de los sistemas operativos (Windows, macOS, Linux). Luego de descargarse la opción deseada, deben seguirse las instrucciones especificadas en la [página de documentación de la instalación](https://docs.anaconda.com/anaconda/install/).
+### Instalación de Anaconda/Miniconda
+La página de descargas de [Anaconda](https://www.anaconda.com/distribution/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) proporciona instaladores para las diferentes versiones de Python y de los sistemas operativos (Windows, macOS, Linux). Luego de descargarse la opción deseada, deben seguirse las instrucciones especificadas en la [página de documentación de la instalación](https://docs.anaconda.com/anaconda/install/).
 
-Para probar la instalación, puede iniciar el navegador de Anaconda:
+## Ejecución de programas en Python
+Con Anaconda/Miniconda, pueden ejecutarse programas en Python tanto desde la línea de comandos del sistema operativo como a través de Jupyter Notebooks.
 
-| ![](img/anaconda-navigator.png) |
-|:---:|
-| Figura 6. Navegador de Anaconda. |
-
-### Ejecución de programas en Python
-Con Anaconda, pueden ejecutarse programas en Python tanto desde la línea de comandos del sistema operativo como a través de Jupyter Notebooks.
-
-#### En Jupyter Notebooks
+### En Jupyter Notebooks
 En el navegador de Anaconda, inicie la opción **Jupyter Notebook**. Se abrirá una ventana en un navegador web como la de la figura 7.
 
 | ![](img/jupyter-files.png) |
