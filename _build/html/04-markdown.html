@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown &#8212; Procesamiento de datos geoespaciales con Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Recursos" href="recursos.html" />
+    <link rel="prev" title="Scratch" href="03-scratch.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Procesamiento de datos geoespaciales con Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Bienvenida
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-arquitecturacomputadoras.html">
+   Arquitectura de computadoras
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-pensamientocomputacional.html">
+   Pensamiento computacional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-scratch.html">
+   Scratch
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recursos.html">
+   Recursos
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04-markdown.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2F04-markdown.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-lenguaje-de-marcado-markdown">
+   El lenguaje de marcado Markdown
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variaciones">
+   Variaciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sintaxis">
+   Sintaxis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encabezados">
+     Encabezados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#italicas">
+     Itálicas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#negritas">
+     Negritas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citas-textuales">
+     Citas textuales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enlaces-a-otros-documentos">
+     Enlaces a otros documentos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imagenes">
+     Imágenes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listas-numeradas">
+     Listas numeradas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listas-no-numeradas">
+     Listas no numeradas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#otros-elementos-de-sintaxis">
+     Otros elementos de sintaxis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="markdown">
+<h1>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h1>
+<p>En este capítulo, se introduce el lenguaje de marcado Markdown. Para probar la sintaxis, se sugiere crear un documento Markdown (.md) en <a class="reference external" href="https://github.com/">GitHub</a>.</p>
+<div class="section" id="el-lenguaje-de-marcado-markdown">
+<h2>El lenguaje de marcado Markdown<a class="headerlink" href="#el-lenguaje-de-marcado-markdown" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://daringfireball.net/projects/markdown/">Markdown</a> es un <a class="reference external" href="https://es.wikipedia.org/wiki/Lenguaje_de_marcado">lenguaje de marcado</a> creado en 2004 por John Gruber. Las “marcas” se utilizan para brindar información acerca de la presentación (ej. negritas, itálicas) o la estructura (ej. títulos, encabezados) de un documento. Se caracteriza por ser más sencillo de leer y de usar que otros lenguajes de marcas (ej. <a class="reference external" href="https://es.wikipedia.org/wiki/HTML">HTML</a>). Los documentos escritos en Markdown pueden exportarse a una gran variedad de formatos (ej. HTML, Doc, PDF, Latex) para ser usados en libros, presentaciones o páginas web, entre otros. Markdown es ampliamente utilizado en comunicación científica, documentación de programas e investigación reproducible.</p>
+</div>
+<div class="section" id="variaciones">
+<h2>Variaciones<a class="headerlink" href="#variaciones" title="Permalink to this headline">¶</a></h2>
+<p>Las variaciones de Markdown, también llamadas <em>flavors</em>, son extensiones o modificaciones de la especificación original. Entre las más populares están:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rmarkdown.rstudio.com/">R Markdown</a>: para el lenguaje R.</p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/content/myst.html">MyST (Markedly Structured Text) Markdown</a>: para <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a>.</p></li>
+<li><p><a class="reference external" href="https://help.github.com/en/github/writing-on-github">GitHub Flavored Markdown</a>: para la plataforma GitHub.</p></li>
+</ul>
+<p>Puede consultarse una lista más extensa en <a class="reference external" href="https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors">https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors</a>.</p>
+</div>
+<div class="section" id="sintaxis">
+<h2>Sintaxis<a class="headerlink" href="#sintaxis" title="Permalink to this headline">¶</a></h2>
+<p>La sintaxis de Markdown permite especificar diferentes componentes de un documento, entre los que están:</p>
+<ul class="simple">
+<li><p>Encabezados.</p></li>
+<li><p>Estilos (ej. negritas, itálicas).</p></li>
+<li><p>Citas textuales.</p></li>
+<li><p>Enlaces a otros documentos (ej. páginas web).</p></li>
+<li><p>Imágenes.</p></li>
+<li><p>Listas.</p></li>
+</ul>
+<div class="section" id="encabezados">
+<h3>Encabezados<a class="headerlink" href="#encabezados" title="Permalink to this headline">¶</a></h3>
+<p>Pueden definirse seis niveles de encabezados, con los símbolos de numeral (#) antes del texto. El primer nivel es el más grande y el sexto el más pequeño. A la izquierda se muestra la sintaxis Markdown y a la derecha la forma en que se despliega en un documento.</p>
+<p><img alt="" src="_images/md-headings.png" /></p>
+</div>
+<div class="section" id="italicas">
+<h3>Itálicas<a class="headerlink" href="#italicas" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con un asterisco (*) antes y después del texto o con un guión bajo (_) antes y después del texto.</p>
+<p><img alt="" src="_images/md-italics.png" /></p>
+</div>
+<div class="section" id="negritas">
+<h3>Negritas<a class="headerlink" href="#negritas" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con dos asteriscos (**) antes y después del texto o con dos guiones bajos (__) antes y después del texto.</p>
+<p><img alt="" src="_images/md-bold.png" /></p>
+</div>
+<div class="section" id="citas-textuales">
+<h3>Citas textuales<a class="headerlink" href="#citas-textuales" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con un símbolo de “mayor que” (&gt;) antes de cada línea.</p>
+<p><img alt="" src="_images/md-blockquotes.png" /></p>
+</div>
+<div class="section" id="enlaces-a-otros-documentos">
+<h3>Enlaces a otros documentos<a class="headerlink" href="#enlaces-a-otros-documentos" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con un paréntesis cuadrados[] seguidos de paréntesis redondos (). En los paréntesis cuadrados se coloca (opcionalmente) el texto del enlace y en los redondos la dirección del documento.</p>
+<p><img alt="" src="_images/md-links.png" /></p>
+</div>
+<div class="section" id="imagenes">
+<h3>Imágenes<a class="headerlink" href="#imagenes" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con un signo de admiración de cierre (!), paréntesis cuadrados[] y paréntesis redondos (). En los paréntesis cuadrados se coloca (opcionalmente) un texto para la imagen y en los redondos la dirección de la imagen, ya sea en el disco o en la red.</p>
+<p><img alt="" src="_images/md-images.png" /></p>
+</div>
+<div class="section" id="listas-numeradas">
+<h3>Listas numeradas<a class="headerlink" href="#listas-numeradas" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con números antes de cada elemento.</p>
+<p><img alt="" src="_images/md-numlist.png" /></p>
+</div>
+<div class="section" id="listas-no-numeradas">
+<h3>Listas no numeradas<a class="headerlink" href="#listas-no-numeradas" title="Permalink to this headline">¶</a></h3>
+<p>Se definen con guiones antes de cada elemento.</p>
+<p><img alt="" src="_images/md-notnumlist.png" /></p>
+</div>
+<div class="section" id="otros-elementos-de-sintaxis">
+<h3>Otros elementos de sintaxis<a class="headerlink" href="#otros-elementos-de-sintaxis" title="Permalink to this headline">¶</a></h3>
+<p>Para conocer otros elementos de la sintaxis de Markdown, se recomienda revisar en detalle:</p>
+<ul class="simple">
+<li><p>Guía de referencia de Markdown: <a class="reference external" href="https://www.markdownguide.org/">Markdown Guide</a></p></li>
+<li><p>Tutorial sobre Markdown: <a class="reference external" href="https://www.markdowntutorial.com/">Markdown Tutorial</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="03-scratch.html" title="previous page">Scratch</a>
+    <a class='right-next' id="next-link" href="recursos.html" title="next page">Recursos</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Manuel Vargas<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
