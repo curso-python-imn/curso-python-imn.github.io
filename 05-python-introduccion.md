@@ -99,8 +99,11 @@ En este curso, se utilizará [Anaconda](https://www.anaconda.com/), una distribu
 ### Instalación de Anaconda/Miniconda
 La página de descargas de [Anaconda](https://www.anaconda.com/distribution/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) proporciona instaladores para las diferentes versiones de Python y de los sistemas operativos (Windows, macOS, Linux). Luego de descargarse la opción deseada, deben seguirse las instrucciones especificadas en la [página de documentación de la instalación](https://docs.anaconda.com/anaconda/install/).
 
+## Google Colaboratory
+[Google Colaboratory](https://colab.research.google.com/) (también llamado *Colab*) ofrece una alternativa de [computación en la nube](https://es.wikipedia.org/wiki/Computaci%C3%B3n_en_la_nube) a la instalación local de Jupyter Notebooks. Colab ofrece un ambiente gratuito para ejecutar los *notebooks* y almacenarlos en Google Drive.
+
 ## Ejecución de programas en Python
-Con Anaconda/Miniconda, pueden ejecutarse programas en Python tanto desde la línea de comandos del sistema operativo como a través de Jupyter Notebooks.
+Los programas en Python pueden ejecutarse desde la línea de comandos del sistema operativo, en un IDE o en Jupyter Notebooks.
 
 ### En Jupyter Notebooks
 La interfaz de un Jupyter Notebook se muestra en la {numref}`figura-interfaz-jupyter`.
