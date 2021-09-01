@@ -11,4 +11,5 @@ chapters:
 - file: 05-python-introduccion
 - file: 06-python-holamundo
 - file: 07-python-tiposvariables
+- file: 08-python-expresiones
 - file: recursos
