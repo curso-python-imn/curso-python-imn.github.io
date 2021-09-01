@@ -10,4 +10,5 @@ chapters:
 - file: 04-markdown
 - file: 05-python-introduccion
 - file: 06-python-holamundo
+- file: 07-python-tiposvariables
 - file: recursos
