@@ -12,4 +12,6 @@ chapters:
 - file: 06-python-holamundo
 - file: 07-python-tiposvariables
 - file: 08-python-expresiones
+- file: 09-python-condicionales
+- file: 10-python-excepciones
 - file: recursos
