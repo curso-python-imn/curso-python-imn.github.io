@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bienvenida &#8212; Procesamiento de datos geoespaciales con Python</title>
+    <title>Python - excepciones &#8212; Procesamiento de datos geoespaciales con Python</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Arquitectura de computadoras" href="01-arquitecturacomputadoras.html" />
+    <link rel="next" title="Recursos" href="recursos.html" />
+    <link rel="prev" title="Python - condicionales" href="09-python-condicionales.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,13 +83,13 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Bienvenida
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-arquitecturacomputadoras.html">
    Arquitectura de computadoras
@@ -134,8 +135,8 @@
    Python - condicionales
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-python-excepciones.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Python - excepciones
   </a>
  </li>
@@ -185,9 +186,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/10-python-excepciones.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -205,7 +206,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2F10-python-excepciones.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -221,11 +222,46 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/curso-python-imn/curso-python-imn.github.io/master?urlpath=tree/docs/10-python-excepciones.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#las-sentencias-try-y-except">
+   Las sentencias try y except
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio">
+   Ejercicio
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -234,10 +270,65 @@
         
               <div>
                 
-  <div class="section" id="bienvenida">
-<h1>Bienvenida<a class="headerlink" href="#bienvenida" title="Permalink to this headline">¶</a></h1>
-<p>Este es un curso introductorio al lenguaje de programación <a class="reference external" href="https://www.python.org/">Python</a>, incluyendo su aplicación al procesamiento de datos geoespaciales. Los estudiantes no requieren de conocimientos previos en programación de computadoras. Es recomendable contar con conocimientos básicos de sistemas de información geográfica (SIG). El enfoque del curso es teórico-práctico, con lecciones teóricas combinadas con ejercicios de programación en los cuales los estudiantes aplicarán en diversos escenarios los conocimientos adquiridos.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="python-excepciones">
+<h1>Python - excepciones<a class="headerlink" href="#python-excepciones" title="Permalink to this headline">¶</a></h1>
+<p>Las <a class="reference external" href="https://docs.python.org/3/reference/executionmodel.html#exceptions">excepciones</a> son un mecanismo que provee Python para manejar errores o situaciones inesperadas que se producen durante la ejecución de los programas. Mediante este mecanismo, el curso de ejecución del programa se interrumpe cuando ocurre un error y una excepción es “levantada” (<em>raised</em>). El control pasa entonces a otro bloque de instrucciones, el cual se encarga de manejar el error.</p>
+<div class="section" id="las-sentencias-try-y-except">
+<h2>Las sentencias try y except<a class="headerlink" href="#las-sentencias-try-y-except" title="Permalink to this headline">¶</a></h2>
+<p>Las sentencias <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#try">try</a> y <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#except">except</a> son las que implementan el manejo de excepciones en Python. En el bloque <strong><em>try</em></strong> se coloca el código que puede ocasionar que se levante la excepción y en el bloque <strong><em>except</em></strong> se ubica el código que maneja la excepción.</p>
+<p>La estructura básica es la siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span> <span class="n">que</span> <span class="n">puede</span> <span class="n">generar</span> <span class="n">un</span> <span class="n">error</span><span class="o">&gt;</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span> <span class="n">que</span> <span class="n">maneja</span> <span class="n">el</span> <span class="n">error</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Por ejemplo, un llamado a la función <strong><em>float()</em></strong> puede ocasionar un error si la hilera de entrada no corresponde a un número entero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;8,5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_13694</span><span class="o">/</span><span class="mf">2988467274.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;8,5&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;8,5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;8,5&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Por favor utilice un número&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El siguiente ejemplo maneja el mismo error, que puede generarse por una entrada errónea por parte del usuario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fahr_hilera</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingrese la temperatura en grados Fahrenheit: &#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">fahr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">fahr_hilera</span><span class="p">)</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahr</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El equivalente el grados Celsius es: &quot;</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Por favor ingrese un número.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio">
+<h2>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this headline">¶</a></h2>
+<p>Reescriba el programa que calcula el IMC y maneje las excepciones que puedan producirse.</p>
 </div>
 </div>
 
@@ -266,7 +357,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="01-arquitecturacomputadoras.html" title="next page">Arquitectura de computadoras</a>
+    <a class='left-prev' id="prev-link" href="09-python-condicionales.html" title="previous page">Python - condicionales</a>
+    <a class='right-next' id="next-link" href="recursos.html" title="next page">Recursos</a>
 
         </div>
         
