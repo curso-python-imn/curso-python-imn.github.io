@@ -14,4 +14,6 @@ chapters:
 - file: 08-python-expresiones
 - file: 09-python-condicionales
 - file: 10-python-excepciones
+- file: 11-python-ciclos
+- file: 12-python-funciones
 - file: recursos
