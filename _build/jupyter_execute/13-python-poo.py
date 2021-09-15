@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python - programación Orientada a Objetos
+# # Python - programación orientada a objetos
 
 # La [Programación Orientada a Objetos (POO)](https://en.wikipedia.org/wiki/Object-oriented_programming) es un [paradigma de programación](https://en.wikipedia.org/wiki/Programming_paradigm) basado en el concepto de **objeto**. En el contexto de la POO, los objetos son entidades que poseen:
 # - **Estado**: implementado con un conjunto de variables llamadas **propiedades**.
