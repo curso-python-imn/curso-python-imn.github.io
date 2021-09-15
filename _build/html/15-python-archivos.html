@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manejo de archivos en Python &#8212; Procesamiento de datos geoespaciales con Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Recursos" href="recursos.html" />
+    <link rel="prev" title="Python - colecciones" href="14-python-colecciones.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Procesamiento de datos geoespaciales con Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Bienvenida
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-arquitecturacomputadoras.html">
+   Arquitectura de computadoras
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-pensamientocomputacional.html">
+   Pensamiento computacional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-scratch.html">
+   Scratch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-markdown.html">
+   Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-python-introduccion.html">
+   Python - introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-python-holamundo.html">
+   Python - el programa “Hola Mundo”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-python-tiposvariables.html">
+   Python - tipos de datos y variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-python-expresiones.html">
+   Python - expresiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-python-condicionales.html">
+   Python - condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-python-excepciones.html">
+   Python - excepciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-python-ciclos.html">
+   Python - ciclos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-python-funciones.html">
+   Python - funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-python-poo.html">
+   Python - programación Orientada a Objetos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-python-colecciones.html">
+   Python - colecciones
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Manejo de archivos en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recursos.html">
+   Recursos
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/15-python-archivos.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/curso-python-imn/curso-python-imn.github.io/issues/new?title=Issue%20on%20page%20%2F15-python-archivos.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursos-de-interes">
+   Recursos de interés
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#archivos">
+   Archivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-la-sentencia-with-para-leer-y-escribir-en-archivos">
+   Uso de la sentencia
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     with
+    </span>
+   </code>
+   para leer y escribir en archivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#archivos-csv">
+   Archivos CSV
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-modulo-csv">
+     El módulo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="manejo-de-archivos-en-python">
+<h1>Manejo de archivos en Python<a class="headerlink" href="#manejo-de-archivos-en-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="recursos-de-interes">
+<h2>Recursos de interés<a class="headerlink" href="#recursos-de-interes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Capítulo 7 del libro <em>Python for Everybody: Exploring data in Python 3</em>, de Charles Severance <a class="reference external" href="https://www.py4e.com/html3/07-files">PY4E - Python for Everybody - Chapter 7:Files</a></p></li>
+</ul>
+</div>
+<div class="section" id="archivos">
+<h2>Archivos<a class="headerlink" href="#archivos" title="Permalink to this headline">¶</a></h2>
+<p>Los archivos proporcionan una forma de almacenar datos de manera persistente (i.e. no volátil) en medios como discos duros, discos compactos, DVD, dispositivos de almacenamiento USB y otros. Contrario a lo que sucede a las estructuras que residen en la memoria del computador, como las variables, la información almacenada en archivos permanece después de que finaliza la ejecución de un programa o se apaga el computador. En Python, los archivos se manejan como objetos de tipo <a class="reference external" href="https://docs.python.org/3/glossary.html#term-file-object">file</a>, los cuales tienen un conjunto de <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">métodos</a>, entre las que están:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#open">open()</a>: para abrir un archivo.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">read()</a>: para leer datos de un archivo.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">write()</a>: para escribir datos en un archivo.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects">close()</a>: para cerrar un archivo.</p></li>
+</ul>
+<p>Estas operaciones se ilustran en la figura 1.</p>
+<p><img alt="Figura 1: Operaciones para manejo de archivos en Python. Imagen de Charles Severance (https://www.py4e.com/html3/07-files)" src="_images/operaciones-archivos-python.png" /></p>
+<p>Figura 1: Operaciones para manejo de archivos en Python. Imagen de Charles Severance (<a class="reference external" href="https://www.py4e.com/html3/07-files">https://www.py4e.com/html3/07-files</a>)</p>
+<p>Estas operaciones se realizan a través de una variable llamada “manejador de archivo” (<em>file handle</em>).</p>
+</div>
+<div class="section" id="uso-de-la-sentencia-with-para-leer-y-escribir-en-archivos">
+<h2>Uso de la sentencia <code class="docutils literal notranslate"><span class="pre">with</span></code> para leer y escribir en archivos<a class="headerlink" href="#uso-de-la-sentencia-with-para-leer-y-escribir-en-archivos" title="Permalink to this headline">¶</a></h2>
+<p>La sentencia <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#with">with</a> se utiliza para ejecutar un bloque con métodos definidos por un <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#context-managers">administrador de contexto (<em>context manager</em>)</a>. Entre otros usos, permite recorrer un archivo y cerrarlo automáticamente cuando se finaliza.</p>
+<p>El siguiente bloque de código abre un archivo en modo de lectura (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>) con la función open() y recorre e imprime cada una de sus líneas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recorrido e impresión de las líneas de un archivo de texto</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;maravillas_antiguas.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para escribir en un archivo, este debe abrirse en modo de escritura (<code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escritura en un archivo</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;archivo_nuevo.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Línea 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Línea 2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Línea 3</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="archivos-csv">
+<h2>Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this headline">¶</a></h2>
+<p>Los archivos CSV (<em>comma separated values</em>, valores separados por comas) son de los más empleados para intercambiar datos en formato tabular (i.e. en columnas). Pueden llamarse de otras formas, como por ejemplo “archivos de texto delimitado”. Son ampliamente utilizados para importar y exportar datos desde y hacia hojas electrónicas, bases de datos y otros sistemas de manejo de información. Consisten de líneas de texto en las cuales hay datos separados por comas. Cada dato corresponde a una columna. Por ejemplo, el siguiente es el contenido de un archivo CSV con cuatro columnas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">,</span><span class="n">ubicacion</span><span class="p">,</span><span class="n">longitud</span><span class="p">,</span><span class="n">latitud</span>
+<span class="n">Taj</span> <span class="n">Mahal</span><span class="p">,</span><span class="n">India</span><span class="p">,</span><span class="mf">78.042111</span><span class="p">,</span><span class="mf">27.174799</span>
+<span class="n">Chichen</span> <span class="n">Itza</span><span class="p">,</span><span class="n">México</span><span class="p">,</span><span class="o">-</span><span class="mf">88.56865</span><span class="p">,</span><span class="mf">20.6829</span>
+<span class="n">La</span> <span class="n">estatua</span> <span class="n">de</span> <span class="n">Cristo</span> <span class="n">Redentor</span><span class="p">,</span><span class="n">Brasil</span><span class="p">,</span><span class="o">-</span><span class="mf">43.210556</span><span class="p">,</span><span class="o">-</span><span class="mf">22.951944</span>
+</pre></div>
+</div>
+<p>A pesar de ser ampliamente usados, los archivos CSV no son un formato completamente estandarizado, por lo que pueden presentarse con algunas variantes:</p>
+<ul class="simple">
+<li><p>La primera línea tiene usualmente los nombres de las columnas (llamados también encabezados), pero no siempre.</p></li>
+<li><p>El caracter separador de las columnas no siempre es una coma. Puede ser también un tabulador, un punto y coma, otro carácter o incluso una combinación de caracteres.</p></li>
+<li><p>Las columnas de texto pueden ir encerradas entre comillas para evitar el problema que se presenta si dentro del texto hay una coma u otro carácter separador.</p></li>
+<li><p>El conjunto de caracteres puede sufrir alteraciones cuando se traslada entre herramientas de software o entre sistemas operativos, sobre en todo en caracteres especiales como los acentos.</p></li>
+</ul>
+<div class="section" id="el-modulo-csv">
+<h3>El módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code><a class="headerlink" href="#el-modulo-csv" title="Permalink to this headline">¶</a></h3>
+<p>El módulo <a class="reference external" href="https://docs.python.org/3/library/csv.html">csv</a> facilita el manejo de archivos CSV en Python. Además de leer el archivo línea por línea, las separa en sus respectivas columnas, al representarlas mediante listas. El método <a class="reference external" href="https://docs.python.org/3/library/csv.html#csv.reader">csv.reader()</a> retorna una lista con las líneas del archivo. Cada línea es, a su vez, una lista de hileras de texto que corresponden a las columnas del archivo.</p>
+<p>El siguiente bloque de código recorre un archivo CSV e imprime sus líneas y las columnas que las componen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Recorrido e impresión de las líneas de un archivo de texto</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;maravillas_antiguas.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="c1"># Se crea el objeto reader</span>
+    <span class="n">lector</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    
+    <span class="c1"># Se recorren las líneas</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">lector</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Línea: &#39;</span><span class="p">,</span> <span class="n">linea</span><span class="p">)</span>
+        
+        <span class="c1"># Se recorren las columnas de la línea</span>
+        <span class="k">for</span> <span class="n">columna</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Columna: &#39;</span><span class="p">,</span> <span class="n">columna</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>El método <a class="reference external" href="https://docs.python.org/3/library/csv.html#csv.writer">csv.writer()</a> se utiliza para escribir en un archivo CSV. El siguiente bloque de código abre un archivo CSV de entrada y recorre sus líneas. Si la columna de ubicación de una línea corresponde a Egipto o Irak, escribe la línea en un archivo de salida.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Recorrido de las líneas de un archivo de texto y escritura en un nuevo archivo de las líneas que cumplen con una condición</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;maravillas_antiguas.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo_entrada</span><span class="p">:</span>
+    <span class="n">lector</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo_entrada</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;maravillas_antiguas_irak_egipto.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo_salida</span><span class="p">:</span>
+        <span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">archivo_salida</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">lector</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Línea del encabezado</span>
+                <span class="n">escritor</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">linea</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Irak&quot;</span> <span class="ow">or</span> <span class="n">linea</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Egipto&quot;</span><span class="p">:</span>
+                 <span class="c1"># La ubicación es Egipto o Irak</span>
+                <span class="n">escritor</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="14-python-colecciones.html" title="previous page">Python - colecciones</a>
+    <a class='right-next' id="next-link" href="recursos.html" title="next page">Recursos</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Manuel Vargas<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

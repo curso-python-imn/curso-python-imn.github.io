@@ -16,4 +16,7 @@ chapters:
 - file: 10-python-excepciones
 - file: 11-python-ciclos
 - file: 12-python-funciones
+- file: 13-python-poo
+- file: 14-python-colecciones
+- file: 15-python-archivos
 - file: recursos
