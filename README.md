@@ -4,7 +4,8 @@
 
 ```shell
 # Actualización de Conda
-$ conda update -n base -c defaults conda
+# $ conda update -n base -c defaults conda
+$ conda update conda
 
 # Creación del ambiente
 $ conda create -n curso-python-imn
