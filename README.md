@@ -16,7 +16,7 @@ $ conda activate curso-python-imn
 # Instalación de módulos
 $ conda config --env --add channels conda-forge
 $ conda config --env --set channel_priority strict
-$ conda install jupyter-book ghp-import
+$ conda install jupyter-book ghp-import geopandas
 
 # Desactivación del ambiente
 $ conda deactivate
@@ -26,10 +26,10 @@ $ conda deactivate
 
 ```shell
 # Creación del Jupyter Book
-$ jupyter-book create curso-python-imn
+$ jupyter-book create curso-python-imn.github.io
 
 # Generación de archivos HTML (en el subdirectorio _build/html)
-$ jupyter-book build curso-python-imn
+$ jupyter-book build curso-python-imn.github.io
 
 # En este punto, se crea en GitHub el repositorio curso-python-imn.github.io
 
