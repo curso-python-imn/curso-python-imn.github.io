@@ -20,6 +20,33 @@
 - [PY4E - Python for Everybody](https://www.py4e.com/)
 - [Python for Everybody: Exploring Data in Python 3](https://www.py4e.com/book.php)
 
+## Conda - Anaconda/Miniconda
+- [Conda](https://docs.conda.io/en/latest/)
+- [Anaconda](https://www.anaconda.com/)
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+- [Installation -- conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
+- [How to Install Miniconda with Jupyter Notebook in Windows 10 (2020) || Step by Step Tutorial](https://www.youtube.com/watch?v=9Qb0Df3Yzek)
+
+### Creación de un ambiente conda para el curso
+```
+# Actualización de Conda
+$ conda update conda
+
+# Creación del ambiente
+$ conda create -n curso-python
+
+# Activación del ambiente
+$ conda activate curso-python
+
+# Instalación de módulos
+$ conda config --env --add channels conda-forge
+$ conda config --env --set channel_priority strict
+$ conda install jupyter geopandas
+
+# Desactivación del ambiente
+$ conda deactivate
+```
+
 ## Scratch
 - [Scratch - Imagine, Program, Share](https://scratch.mit.edu/)
 - [CS50's Introduction to Programming with Scratch](https://www.edx.org/course/cs50s-introduction-to-programming-with-scratch)
