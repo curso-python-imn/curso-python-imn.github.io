@@ -4,7 +4,8 @@
 
 ```shell
 # Actualización de Conda
-$ conda update -n base -c defaults conda
+# $ conda update -n base -c defaults conda
+$ conda update conda
 
 # Creación del ambiente
 $ conda create -n curso-python-imn
@@ -15,8 +16,7 @@ $ conda activate curso-python-imn
 # Instalación de módulos
 $ conda config --env --add channels conda-forge
 $ conda config --env --set channel_priority strict
-$ conda install jupyter-book
-$ conda install ghp-import
+$ conda install jupyter-book ghp-import
 
 # Desactivación del ambiente
 $ conda deactivate
