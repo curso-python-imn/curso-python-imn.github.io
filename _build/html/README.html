@@ -310,7 +310,7 @@ $ conda activate curso-python-imn
 <span class="c1"># Instalación de módulos</span>
 $ conda config --env --add channels conda-forge
 $ conda config --env --set channel_priority strict
-$ conda install jupyter-book ghp-import
+$ conda install jupyter-book ghp-import geopandas
 
 <span class="c1"># Desactivación del ambiente</span>
 $ conda deactivate
@@ -320,10 +320,10 @@ $ conda deactivate
 <div class="section" id="creacion-del-jupyter-book-y-publicacion-inicial-del-sitio-web">
 <h2>Creación del Jupyter Book y publicación inicial del sitio web<a class="headerlink" href="#creacion-del-jupyter-book-y-publicacion-inicial-del-sitio-web" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creación del Jupyter Book</span>
-$ jupyter-book create curso-python-imn
+$ jupyter-book create curso-python-imn.github.io
 
 <span class="c1"># Generación de archivos HTML (en el subdirectorio _build/html)</span>
-$ jupyter-book build curso-python-imn
+$ jupyter-book build curso-python-imn.github.io
 
 <span class="c1"># En este punto, se crea en GitHub el repositorio curso-python-imn.github.io</span>
 
