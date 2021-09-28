@@ -53,9 +53,9 @@ ghp-import -n -p -f _build/html
 
 ```shell
 # Generación de archivos HTML
-$ jupyter-book build curso-python-imn
+$ jupyter-book build curso-python-imn.github.io
 
-$ cd curso-python-imn
+$ cd curso-python-imn.github.io
 
 # Aplicación de cambios en el branch main
 $ git status
