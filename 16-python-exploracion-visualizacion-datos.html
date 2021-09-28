@@ -284,6 +284,45 @@
    Sobre el Titanic
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analisis-de-datos-del-titanic">
+   Análisis de datos del Titanic
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacion">
+     Visualización
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploracion">
+     Exploración
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sexo">
+       Sexo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#edad">
+       Edad
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clase">
+       Clase
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelado">
+     Modelado
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -304,6 +343,302 @@
 <p>El Titanic es quizá el barco más famoso de la historia y su memoria se mantiene muy viva gracias a numerosos libros, canciones, películas, exposiciones y memoriales.</p>
 <p><img alt="El RMS Titanic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/800px-RMS_Titanic_3.jpg" /></p>
 <p>El RMS Titanic al salir de Southampton el 10 de abril de 1912. Imagen de dominio público disponible en <a class="reference external" href="https://commons.wikimedia.org/wiki/File:RMS_Titanic_3.jpg">Wikimedia Commons</a>.</p>
+</div>
+<div class="section" id="analisis-de-datos-del-titanic">
+<h2>Análisis de datos del Titanic<a class="headerlink" href="#analisis-de-datos-del-titanic" title="Permalink to this headline">¶</a></h2>
+<p>Se proporcionan dos archivos CSV (valores separados por comas) con datos sobre los pasajeros del Titanic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/curso-python-imn/curso-python-imn.github.io/blob/main/datos/titanic/entrenamiento.csv">entrenamiento.csv</a>: contiene datos detallados sobre un subconjunto de pasajeros (891 registros), incluyendo una columna que indica si cada uno sobrevivió o no al naufragio.</p></li>
+<li><p><a class="reference external" href="https://github.com/curso-python-imn/curso-python-imn.github.io/blob/main/datos/titanic/evaluacion.csv">evaluacion.csv</a>: contiene otro subconjunto (418 registros) con las mismas columnas del conjunto de datos de entrenamiento, excepto la que indica si el pasajero sobrevivió al naufragio.</p></li>
+</ul>
+<p>Para analizar los datos, se utilizarán las bibliotecas <a class="reference external" href="https://numpy.org/">numpy</a> y <a class="reference external" href="https://pandas.pydata.org/">pandas</a> de Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># biblioteca para álgebra lineal</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># biblioteca para análisis de datos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizacion">
+<h3>Visualización<a class="headerlink" href="#visualizacion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de los datos de un archivo en un data frame de pandas</span>
+<span class="n">datos_entrenamiento</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/titanic/entrenamiento.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Despliegue de los primeros registros</span>
+<span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_evaluacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/titanic/evaluacion.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exploracion">
+<h3>Exploración<a class="headerlink" href="#exploracion" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sexo">
+<h4>Sexo<a class="headerlink" href="#sexo" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mujeres_sobrevivientes</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_mujeres</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mujeres_sobrevivientes</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mujeres_sobrevivientes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de mujeres que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_mujeres</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de mujeres que sobrevivieron: 0.74
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hombres_sobrevivientes</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_hombres</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hombres_sobrevivientes</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">hombres_sobrevivientes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de hombres que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_hombres</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de hombres que sobrevivieron: 0.19
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="edad">
+<h4>Edad<a class="headerlink" href="#edad" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sobrevivientes_menores</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_menores</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sobrevivientes_menores</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">sobrevivientes_menores</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de menores de edad que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_menores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de menores de edad que sobrevivieron: 0.54
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sobrevivientes_mayores</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_mayores</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sobrevivientes_mayores</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">sobrevivientes_mayores</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de mayores de edad que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_mayores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de mayores de edad que sobrevivieron: 0.38
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clase">
+<h4>Clase<a class="headerlink" href="#clase" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clase1_sobrevivientes</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_clase1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">clase1_sobrevivientes</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">clase1_sobrevivientes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de pasajeros de primera clase que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_clase1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de pasajeros de primera clase que sobrevivieron: 0.63
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clase2_sobrevivientes</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="mi">2</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_clase2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">clase2_sobrevivientes</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">clase2_sobrevivientes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de pasajeros de segunda clase que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_clase2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de pasajeros de segunda clase que sobrevivieron: 0.47
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clase3_sobrevivientes</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">datos_entrenamiento</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="mi">3</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+<span class="n">tasa_sobrevivencia_clase3</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">clase1_sobrevivientes</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">clase3_sobrevivientes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porcentaje de pasajeros de tercera clase que sobrevivieron: </span><span class="si">{:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tasa_sobrevivencia_clase3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Porcentaje de pasajeros de tercera clase que sobrevivieron: 0.28
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modelado">
+<h3>Modelado<a class="headerlink" href="#modelado" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">datos_entrenamiento</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="s2">&quot;SibSp&quot;</span><span class="p">,</span> <span class="s2">&quot;Parch&quot;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">datos_entrenamiento</span><span class="p">[</span><span class="n">features</span><span class="p">])</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">datos_evaluacion</span><span class="p">[</span><span class="n">features</span><span class="p">])</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;PassengerId&#39;</span><span class="p">:</span> <span class="n">datos_evaluacion</span><span class="o">.</span><span class="n">PassengerId</span><span class="p">,</span> <span class="s1">&#39;Survived&#39;</span><span class="p">:</span> <span class="n">predictions</span><span class="p">})</span>
+<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;submission.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your submission was successfully saved!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your submission was successfully saved!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
