@@ -16,8 +16,7 @@ $ conda activate curso-python-imn
 # Instalación de módulos
 $ conda config --env --add channels conda-forge
 $ conda config --env --set channel_priority strict
-$ conda install jupyter-book
-$ conda install ghp-import
+$ conda install jupyter-book ghp-import
 
 # Desactivación del ambiente
 $ conda deactivate
