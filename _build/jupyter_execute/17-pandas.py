@@ -230,7 +230,7 @@ registros_x_fecha
 registros_x_fecha.plot(figsize=(20,8), color='blue')
 
 # Título y leyendas en los ejes
-plt.title('Registros de presencia de Felidae (felinos) en Costa Rica por mes', fontsize=20)
+plt.title('Registros de presencia de Felidae (felinos) en Costa Rica por fecha', fontsize=20)
 plt.xlabel('Fecha',fontsize=16)
 plt.ylabel('Cantidad de registros',fontsize=16);
 plt.legend()
