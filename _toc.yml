@@ -20,4 +20,5 @@ chapters:
 - file: 14-python-colecciones
 - file: 15-python-archivos
 - file: 16-introduccionanalisisdatospython
+- file: 17-pandas
 - file: recursos
