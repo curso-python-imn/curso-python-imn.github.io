@@ -3,9 +3,9 @@
 
 # # La biblioteca pandas
 
-# [pandas](https://pandas.pydata.org/) es una biblioteca de Python para análisis y manipulación de datos. Proporciona estructuras de datos y operaciones para manejar tablas numéricas y series temporales.
+# [pandas](https://pandas.pydata.org/) es una biblioteca de Python para análisis y manipulación de datos. Proporciona estructuras de datos y operaciones para manejar tablas numéricas y series temporales. Fue creada por Wes McKinney in 2008. El nombre "pandas" hace referencia tanto a "*Panel Data*" como a "*Python Data Analysis*".
 # 
-# El [data frame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) es una estructura rectangular, organizada en filas y columnas, en la cual pandas almacena los datos.
+# Como su estructura principal de datos, pandas implementa el [data frame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html), el cual es un arreglo rectangular, organizado en filas y columnas.
 
 # ## Instalación
 
@@ -29,6 +29,100 @@ import numpy as np # biblioteca para álgebra lineal
 import pandas as pd # biblioteca para análisis de datos
 
 
+# ## Estructuras de datos
+# Las dos principales estructuras de datos de pandas son series y dataframes.
+
+# ### Series
+# Las series son arreglos unidimensionales que contienen datos de cualquier tipo. Se asemejan a una columna de una tabla.
+
+# In[2]:
+
+
+primos = [2, 3, 5, 7, 11]
+
+serie_primos = pd.Series(primos)
+
+serie_primos
+
+
+# Cada elemento de una serie tiene un índice (i.e. posición), comenzando con 0.
+
+# In[3]:
+
+
+# Primer elemento
+print(serie_primos[0])
+
+# Segundo elemento
+print(serie_primos[1])
+
+
+# Los índices también pueden tener etiquetas personalizadas:
+
+# In[4]:
+
+
+serie_primos = pd.Series(primos, index = ["A", "B", "C", "D", "E"])
+
+serie_primos
+
+
+# In[5]:
+
+
+# Elemento en el índice "D"
+print(serie_primos["D"])
+
+
+# ### Dataframes
+# Los dataframes son estructuras multidimensionales. Una serie puede verse como una columna de una tabla y un dataframe como una tabla completa. Un dataframe puede construirse a partir de varias series.
+
+# In[6]:
+
+
+# Dataframe construído a partir de dos series
+datos = {
+  "pais": ["PA", "CR", "NI"],
+  "poblacion": [4.1, 5.0, 6.6]
+}
+
+paises = pd.DataFrame(datos)
+
+paises
+
+
+# El atributo **loc** permite retornar una o más filas de un dataframe:
+
+# In[7]:
+
+
+# Segundo elemento
+paises.loc[1]
+
+
+# In[8]:
+
+
+# Segundo y tercer elemento
+paises.loc[[1, 2]]
+
+
+# Los índices de los dataframes también pueden etiquetarse:
+
+# In[9]:
+
+
+paises = pd.DataFrame(datos, index=["pais0", "pais1", "pais2"])
+paises
+
+
+# In[10]:
+
+
+# Elemento en "pais0"
+paises.loc["pais0"]
+
+
 # ## Operaciones básicas
 
 # Seguidamente, se describen y ejemplifican algunas de las funciones básicas de pandas.
@@ -37,7 +131,7 @@ import pandas as pd # biblioteca para análisis de datos
 
 # ### read_csv() - carga de datos
 
-# In[2]:
+# In[11]:
 
 
 felidae = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/gbif/felidae.csv", sep="\t")
@@ -45,7 +139,7 @@ felidae = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-
 
 # ### info() - información general sobre un conjunto de datos
 
-# In[3]:
+# In[12]:
 
 
 felidae.info()
@@ -53,21 +147,21 @@ felidae.info()
 
 # ### head(), tail(), sample() - despliegue de filas de un conjunto de datos
 
-# In[4]:
+# In[13]:
 
 
 # Primeros 10 registros
 felidae.head()
 
 
-# In[5]:
+# In[14]:
 
 
 # Últimos 15 registros
 felidae.tail()
 
 
-# In[6]:
+# In[15]:
 
 
 # 5 registros seleccionados aleatoriamente
@@ -76,7 +170,7 @@ felidae.sample(5)
 
 # Los contenidos de un data frame también pueden desplegarse al escribir su nombre en la consola de Python.
 
-# In[7]:
+# In[16]:
 
 
 felidae
@@ -86,7 +180,7 @@ felidae
 
 # Las columnas que se despliegan en un data frame pueden especificarse mediante una lista.
 
-# In[8]:
+# In[17]:
 
 
 # Despliegue de las columnas con el nombre científico, la especie, la fecha, el año, el mes y el día
@@ -95,7 +189,7 @@ felidae[["scientificName", "species", "eventDate", "year", "month", "day"]]
 
 # ### Selección de filas
 
-# In[9]:
+# In[18]:
 
 
 # Selección de filas correspondientes a jaguares (*Panthera onca*)
@@ -105,7 +199,7 @@ panthera_onca = felidae[felidae["species"] == "Panthera onca"]
 panthera_onca.head()
 
 
-# In[10]:
+# In[19]:
 
 
 # Selección de filas correspondientes a jaguares (*Panthera onca*) o pumas (*Puma concolor*)
@@ -121,7 +215,7 @@ panthera_onca_puma_concolor.head(10)
 
 # #### Carga de bibliotecas
 
-# In[11]:
+# In[20]:
 
 
 import matplotlib.pyplot as plt # biblioteca de graficación
@@ -132,7 +226,7 @@ import calendar # biblioteca para manejo de fechas
 
 # #### Estilo de los gráficos
 
-# In[12]:
+# In[21]:
 
 
 # Estilo de los gráficos
@@ -143,7 +237,7 @@ plt.style.use('ggplot')
 
 # ##### Distribución de registros de presencia por año
 
-# In[13]:
+# In[22]:
 
 
 # Cambio del tipo de datos del campo de fecha
@@ -155,7 +249,7 @@ felidae_registros_x_anio = felidae.groupby(felidae['eventDate'].dt.year).count()
 felidae_registros_x_anio
 
 
-# In[14]:
+# In[23]:
 
 
 # Conversión a un dataframe
@@ -168,7 +262,7 @@ felidae_registros_x_anio_df.style.set_precision(2)
 felidae_registros_x_anio_df
 
 
-# In[15]:
+# In[24]:
 
 
 # Graficación
@@ -182,7 +276,7 @@ plt.ylabel('Cantidad de registros', fontsize=16)
 
 # ##### Distribución de registros de presencia por mes
 
-# In[16]:
+# In[25]:
 
 
 # Agrupación de los registros por mes
@@ -191,7 +285,7 @@ felidae_registros_x_mes = felidae.groupby(felidae['eventDate'].dt.month).count()
 felidae_registros_x_mes
 
 
-# In[17]:
+# In[26]:
 
 
 # Reemplazo del número del mes por el nombre del mes
@@ -200,7 +294,7 @@ felidae_registros_x_mes.index=[calendar.month_name[x] for x in range(1,13)]
 felidae_registros_x_mes
 
 
-# In[18]:
+# In[27]:
 
 
 # Gráfico de barras
@@ -214,7 +308,7 @@ plt.ylabel('Cantidad de registros', fontsize=16);
 
 # ##### Graficación en una línea de tiempo
 
-# In[19]:
+# In[28]:
 
 
 # Agrupación de los registros por fecha
@@ -223,7 +317,7 @@ registros_x_fecha = felidae.groupby(felidae['eventDate'].dt.date).count().eventD
 registros_x_fecha
 
 
-# In[20]:
+# In[29]:
 
 
 # Gráfico de líneas
@@ -234,6 +328,70 @@ plt.title('Registros de presencia de Felidae (felinos) en Costa Rica por fecha',
 plt.xlabel('Fecha',fontsize=16)
 plt.ylabel('Cantidad de registros',fontsize=16);
 plt.legend()
+
+
+# ## Datos del IMN
+
+# In[30]:
+
+
+san_carlos = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/analisis-riesgo/indicadores-vulnerabilidad-SAN%20CARLOS.csv")
+
+san_carlos
+
+
+# In[31]:
+
+
+# Estructura
+san_carlos.info()
+
+
+# ### Gráficos
+
+# In[32]:
+
+
+# Gráfico de un subconjunto
+san_carlos_s01 = san_carlos[["HOMBRES", "MUJERES"]]
+
+san_carlos_s01.plot(figsize=(20,7))
+
+
+# ### Histogramas
+# Muestran la distribución de una variable numérica.
+
+# In[33]:
+
+
+# Histograma de la variable INDICE_VULNERABILIDAD_INTEGRADO
+san_carlos["INDICE_VULNERABILIDAD_INTEGRADO"].plot(kind = 'hist')
+
+
+# ### Gráficos de dispersión (*scatterplots*)
+# Muestran la relación entre dos variables numéricas.
+
+# In[34]:
+
+
+# Gráfico de dispersión HOMBRES e INDICE_VULNERABILIDAD_INTEGRADO
+san_carlos.plot(kind = 'scatter', x = 'HOMBRES', y = 'INDICE_VULNERABILIDAD_INTEGRADO')
+
+
+# ### Análisis de correlación
+
+# In[35]:
+
+
+# Correlaciones de un subconjunto de datos
+san_carlos_s01.corr()
+
+
+# In[36]:
+
+
+# Correlaciones de todo el conjunto de datos
+san_carlos.corr()
 
 
 # In[ ]:
