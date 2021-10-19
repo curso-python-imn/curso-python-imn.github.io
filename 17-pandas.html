@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Recursos" href="recursos.html" />
+    <link rel="next" title="La biblioteca geopandas" href="18-geopandas.html" />
     <link rel="prev" title="Introducción al análisis de datos con Python" href="16-introduccionanalisisdatospython.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -176,6 +176,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="18-geopandas.html">
+   La biblioteca geopandas
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="recursos.html">
    Recursos
   </a>
@@ -284,104 +289,111 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalacion">
-   Instalación
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   La biblioteca pandas
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#carga">
-   Carga
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estructuras-de-datos">
-   Estructuras de datos
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series">
-     Series
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instalacion">
+     Instalación
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dataframes">
-     Dataframes
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carga">
+     Carga
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operaciones-basicas">
-   Operaciones básicas
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-csv-carga-de-datos">
-     read_csv() - carga de datos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#info-informacion-general-sobre-un-conjunto-de-datos">
-     info() - información general sobre un conjunto de datos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos">
-     head(), tail(), sample() - despliegue de filas de un conjunto de datos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#seleccion-de-columnas">
-     Selección de columnas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#seleccion-de-filas">
-     Selección de filas
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operaciones-de-analisis">
-   Operaciones de análisis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficacion">
-     Graficación
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estructuras-de-datos">
+     Estructuras de datos
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#carga-de-bibliotecas">
-       Carga de bibliotecas
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#series">
+       Series
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#estilo-de-los-graficos">
-       Estilo de los gráficos
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dataframes">
+       Dataframes
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ejemplos-de-graficos">
-       Ejemplos de gráficos
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operaciones-basicas">
+     Operaciones básicas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#read-csv-carga-de-datos">
+       read_csv() - carga de datos
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#info-informacion-general-sobre-un-conjunto-de-datos">
+       info() - información general sobre un conjunto de datos
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos">
+       head(), tail(), sample() - despliegue de filas de un conjunto de datos
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#seleccion-de-columnas">
+       Selección de columnas
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#seleccion-de-filas">
+       Selección de filas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operaciones-de-analisis">
+     Operaciones de análisis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#graficacion">
+       Graficación
       </a>
       <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-ano">
-         Distribución de registros de presencia por año
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#carga-de-bibliotecas">
+         Carga de bibliotecas
         </a>
        </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-mes">
-         Distribución de registros de presencia por mes
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#estilo-de-los-graficos">
+         Estilo de los gráficos
         </a>
        </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#graficacion-en-una-linea-de-tiempo">
-         Graficación en una línea de tiempo
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplos-de-graficos">
+         Ejemplos de gráficos
         </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-ano">
+           Distribución de registros de presencia por año
+          </a>
+         </li>
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-mes">
+           Distribución de registros de presencia por mes
+          </a>
+         </li>
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#graficacion-en-una-linea-de-tiempo">
+           Graficación en una línea de tiempo
+          </a>
+         </li>
+        </ul>
        </li>
       </ul>
      </li>
@@ -389,34 +401,46 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datos-del-imn">
-   Datos del IMN
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analisis-de-riesgo-ante-eventos-hidrometeorologicos-extremos">
+   Análisis de riesgo ante eventos hidrometeorológicos extremos
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficos">
-     Gráficos
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nicoya">
+     Nicoya
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#histogramas">
-     Histogramas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficos-de-dispersion-scatterplots">
-     Gráficos de dispersión (
-     <em>
-      scatterplots
-     </em>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analisis-de-correlacion">
-     Análisis de correlación
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tabla-de-datos-por-ugm">
+       Tabla de datos por UGM
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distribucion-porcentual-de-la-poblacion-a-nivel-de-distrito">
+       Distribución porcentual de la población a nivel de distrito
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#caracteristicas-de-la-poblacion-dependiente">
+       Características de la población dependiente
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#necesidades-basicas-insatisfechas">
+         Necesidades básicas insatisfechas
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#belen-de-nosarita">
+           Belén de Nosarita
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1214,10 +1238,10 @@ memory usage: 58.7+ KB
   </thead>
   <tbody>
     <tr>
-      <th>13</th>
-      <td>3067612232</td>
+      <th>37</th>
+      <td>2850704382</td>
       <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/66718421</td>
+      <td>https://www.inaturalist.org/observations/55513804</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1226,46 +1250,22 @@ memory usage: 58.7+ KB
       <td>Puma</td>
       <td>Puma concolor</td>
       <td>...</td>
-      <td>Jeff Mollenhauer</td>
-      <td>2020-12-18T01:09:50</td>
+      <td>Osa Conservation</td>
+      <td>2020-08-05T17:52:37</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Jeff Mollenhauer</td>
-      <td>Jeff Mollenhauer</td>
+      <td>Osa Conservation</td>
+      <td>Osa Conservation</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:09:44.468Z</td>
+      <td>2021-09-23T21:02:25.855Z</td>
       <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>136</th>
-      <td>686389681</td>
-      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
-      <td>92909905-1ed8-11e3-bfac-90b11c41863e</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus wiedii</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CC_BY_4_0</td>
-      <td>NaN</td>
-      <td>WILLE A &amp; DALY H V</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-10-04T19:41:14.566Z</td>
-      <td>NaN</td>
-      <td>COORDINATE_REPROJECTED;COLLECTION_MATCH_FUZZY</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>1913186276</td>
+      <th>7</th>
+      <td>3301973250</td>
       <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/16423519</td>
+      <td>https://www.inaturalist.org/observations/81200915</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1274,22 +1274,22 @@ memory usage: 58.7+ KB
       <td>Leopardus</td>
       <td>Leopardus pardalis</td>
       <td>...</td>
-      <td>The Jaguar's Jungle</td>
-      <td>2018-09-11T17:52:42</td>
+      <td>Zak</td>
+      <td>2021-06-02T12:05:45</td>
       <td>CC_BY_NC_4_0</td>
-      <td>The Jaguar's Jungle</td>
-      <td>The Jaguar's Jungle</td>
+      <td>jefferson_1</td>
+      <td>jefferson_1</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:19:23.360Z</td>
+      <td>2021-09-23T21:08:13.136Z</td>
       <td>StillImage</td>
       <td>COORDINATE_ROUNDED</td>
     </tr>
     <tr>
-      <th>62</th>
-      <td>2619893715</td>
+      <th>88</th>
+      <td>2350422827</td>
       <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/44446066</td>
+      <td>https://www.inaturalist.org/observations/30786943</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1298,40 +1298,64 @@ memory usage: 58.7+ KB
       <td>Puma</td>
       <td>Puma concolor</td>
       <td>...</td>
-      <td>johnmeikle</td>
-      <td>2020-05-01T04:55:55</td>
+      <td>wowsomany</td>
+      <td>2019-08-14T01:15:17</td>
       <td>CC_BY_NC_4_0</td>
-      <td>johnmeikle</td>
-      <td>johnmeikle</td>
+      <td>wowsomany</td>
+      <td>wowsomany</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:21:59.852Z</td>
+      <td>2021-09-23T21:20:36.729Z</td>
       <td>StillImage</td>
       <td>COORDINATE_ROUNDED</td>
     </tr>
     <tr>
-      <th>104</th>
-      <td>1987329134</td>
-      <td>6d2cfc0a-9903-40b8-802b-403398218e4a</td>
-      <td>c15c6b62-a4e8-4685-8cc9-c59037fff61b</td>
+      <th>122</th>
+      <td>1305160376</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>http://www.inaturalist.org/observations/3958138</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
       <td>Leopardus</td>
-      <td>Leopardus tigrinus</td>
+      <td>Leopardus pardalis</td>
       <td>...</td>
+      <td>Matt Brady</td>
+      <td>2016-08-25T04:00:05</td>
+      <td>CC_BY_4_0</td>
+      <td>Matt Brady</td>
+      <td>Matt Brady</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>2021-09-23T21:17:45.433Z</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>2851120457</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/55512549</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
+      <td>...</td>
+      <td>Osa Conservation</td>
+      <td>2020-08-05T17:43:14</td>
       <td>CC_BY_NC_4_0</td>
+      <td>Osa Conservation</td>
+      <td>Osa Conservation</td>
       <td>NaN</td>
-      <td>SMITH, A.</td>
       <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-23T19:46:45.489Z</td>
+      <td>2021-09-23T21:22:53.886Z</td>
+      <td>StillImage</td>
       <td>NaN</td>
-      <td>INSTITUTION_MATCH_FUZZY;INSTITUTION_COLLECTION...</td>
     </tr>
   </tbody>
 </table>
@@ -2377,7 +2401,7 @@ Name: eventDate, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_87553/1460916896.py:6: FutureWarning: this method is deprecated in favour of `Styler.format(precision=..)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_125017/1460916896.py:6: FutureWarning: this method is deprecated in favour of `Styler.format(precision=..)`
   felidae_registros_x_anio_df.style.set_precision(2)
 </pre></div>
 </div>
@@ -2700,7 +2724,7 @@ Name: eventDate, Length: 135, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7facba6ce610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f60b41a3d30&gt;
 </pre></div>
 </div>
 <img alt="_images/17-pandas_57_1.png" src="_images/17-pandas_57_1.png" />
@@ -2710,13 +2734,25 @@ Name: eventDate, Length: 135, dtype: int64
 </div>
 </div>
 </div>
-<div class="section" id="datos-del-imn">
-<h2>Datos del IMN<a class="headerlink" href="#datos-del-imn" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="analisis-de-riesgo-ante-eventos-hidrometeorologicos-extremos">
+<h1>Análisis de riesgo ante eventos hidrometeorológicos extremos<a class="headerlink" href="#analisis-de-riesgo-ante-eventos-hidrometeorologicos-extremos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nicoya">
+<h2>Nicoya<a class="headerlink" href="#nicoya" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">san_carlos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/analisis-riesgo/indicadores-vulnerabilidad-SAN%20CARLOS.csv&quot;</span><span class="p">)</span>
-
-<span class="n">san_carlos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lectura de datos</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/analisis-riesgo/indicadores-vulnerabilidad-NICOYA.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tabla-de-datos-por-ugm">
+<h3>Tabla de datos por UGM<a class="headerlink" href="#tabla-de-datos-por-ugm" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Despliegue de datos</span>
+<span class="n">datos</span>
 </pre></div>
 </div>
 </div>
@@ -2765,123 +2801,123 @@ Name: eventDate, Length: 135, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>Quesada</td>
-      <td>21001</td>
-      <td>85</td>
-      <td>99</td>
-      <td>107</td>
-      <td>206</td>
-      <td>131</td>
-      <td>70</td>
-      <td>5</td>
+      <td>Nicoya</td>
+      <td>50201</td>
+      <td>38581</td>
+      <td>48</td>
+      <td>56</td>
+      <td>104</td>
+      <td>71</td>
+      <td>27</td>
+      <td>6</td>
       <td>0</td>
       <td>...</td>
-      <td>103.8119</td>
-      <td>31.619130</td>
-      <td>6.559543</td>
-      <td>7.151004</td>
-      <td>12.065766</td>
-      <td>6.893093</td>
-      <td>26.316350</td>
-      <td>5.212499</td>
-      <td>177.891153</td>
-      <td>51.771562</td>
+      <td>102.5152</td>
+      <td>18.818688</td>
+      <td>25.345476</td>
+      <td>0.000000</td>
+      <td>1.00678</td>
+      <td>9.21241</td>
+      <td>16.048980</td>
+      <td>4.421661</td>
+      <td>90.646146</td>
+      <td>25.990407</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Quesada</td>
-      <td>21001</td>
-      <td>227</td>
-      <td>28</td>
-      <td>32</td>
-      <td>60</td>
-      <td>46</td>
-      <td>14</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>122.1502</td>
-      <td>46.094674</td>
-      <td>6.559543</td>
-      <td>7.151004</td>
-      <td>12.065766</td>
-      <td>6.893093</td>
-      <td>26.316350</td>
-      <td>5.212499</td>
-      <td>79.492977</td>
-      <td>19.964000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Quesada</td>
-      <td>21001</td>
-      <td>233</td>
-      <td>16</td>
-      <td>16</td>
-      <td>32</td>
-      <td>31</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>142.8400</td>
-      <td>62.426402</td>
-      <td>6.559543</td>
-      <td>7.151004</td>
-      <td>12.065766</td>
-      <td>6.893093</td>
-      <td>26.316350</td>
-      <td>5.212499</td>
-      <td>87.565350</td>
-      <td>22.573424</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Quesada</td>
-      <td>21001</td>
-      <td>239</td>
-      <td>30</td>
-      <td>38</td>
-      <td>68</td>
-      <td>64</td>
+      <td>Nicoya</td>
+      <td>50201</td>
+      <td>38625</td>
+      <td>41</td>
+      <td>36</td>
+      <td>77</td>
+      <td>73</td>
       <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
-      <td>105.8029</td>
-      <td>33.190748</td>
-      <td>6.559543</td>
-      <td>7.151004</td>
-      <td>12.065766</td>
-      <td>6.893093</td>
-      <td>26.316350</td>
-      <td>5.212499</td>
-      <td>71.745061</td>
-      <td>17.459459</td>
+      <td>95.2399</td>
+      <td>12.101375</td>
+      <td>25.345476</td>
+      <td>0.000000</td>
+      <td>1.00678</td>
+      <td>9.21241</td>
+      <td>16.048980</td>
+      <td>4.421661</td>
+      <td>88.069345</td>
+      <td>25.181674</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Quesada</td>
-      <td>21001</td>
-      <td>397</td>
-      <td>64</td>
-      <td>67</td>
-      <td>131</td>
-      <td>102</td>
-      <td>21</td>
+      <th>2</th>
+      <td>Nicoya</td>
+      <td>50201</td>
+      <td>38672</td>
+      <td>14</td>
+      <td>11</td>
+      <td>25</td>
+      <td>14</td>
+      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>171.4000</td>
+      <td>82.420293</td>
+      <td>25.345476</td>
+      <td>0.000000</td>
+      <td>1.00678</td>
+      <td>9.21241</td>
+      <td>16.048980</td>
+      <td>4.421661</td>
+      <td>112.148857</td>
+      <td>32.739060</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Nicoya</td>
+      <td>50201</td>
+      <td>38706</td>
+      <td>17</td>
+      <td>20</td>
+      <td>37</td>
+      <td>17</td>
+      <td>12</td>
       <td>8</td>
       <td>0</td>
       <td>...</td>
-      <td>96.7634</td>
-      <td>26.055317</td>
-      <td>6.559543</td>
-      <td>7.151004</td>
-      <td>12.065766</td>
-      <td>6.893093</td>
-      <td>26.316350</td>
-      <td>5.212499</td>
-      <td>92.081966</td>
-      <td>24.033436</td>
+      <td>114.2799</td>
+      <td>29.681082</td>
+      <td>25.345476</td>
+      <td>0.000000</td>
+      <td>1.00678</td>
+      <td>9.21241</td>
+      <td>16.048980</td>
+      <td>4.421661</td>
+      <td>62.181956</td>
+      <td>17.056883</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nicoya</td>
+      <td>50201</td>
+      <td>38718</td>
+      <td>15</td>
+      <td>15</td>
+      <td>30</td>
+      <td>24</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>142.8400</td>
+      <td>56.050734</td>
+      <td>25.345476</td>
+      <td>0.000000</td>
+      <td>1.00678</td>
+      <td>9.21241</td>
+      <td>16.048980</td>
+      <td>4.421661</td>
+      <td>79.441470</td>
+      <td>22.473804</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2908,256 +2944,199 @@ Name: eventDate, Length: 135, dtype: int64
       <td>...</td>
     </tr>
     <tr>
-      <th>1582</th>
-      <td>Pocosol</td>
-      <td>21013</td>
-      <td>71751</td>
-      <td>72</td>
-      <td>82</td>
-      <td>154</td>
-      <td>112</td>
-      <td>30</td>
-      <td>12</td>
+      <th>756</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72789</td>
+      <td>35</td>
+      <td>32</td>
+      <td>67</td>
       <td>0</td>
+      <td>47</td>
+      <td>16</td>
+      <td>4</td>
       <td>...</td>
-      <td>108.2923</td>
-      <td>35.155784</td>
-      <td>20.474462</td>
-      <td>0.000000</td>
-      <td>7.385222</td>
-      <td>8.098322</td>
-      <td>9.102449</td>
-      <td>1.654850</td>
-      <td>114.612662</td>
-      <td>31.316564</td>
+      <td>171.4000</td>
+      <td>82.420293</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.00000</td>
+      <td>10.00000</td>
+      <td>28.529665</td>
+      <td>10.000000</td>
+      <td>157.692386</td>
+      <td>47.032956</td>
     </tr>
     <tr>
-      <th>1583</th>
-      <td>Pocosol</td>
-      <td>21013</td>
-      <td>71752</td>
-      <td>64</td>
-      <td>46</td>
-      <td>110</td>
-      <td>20</td>
-      <td>26</td>
-      <td>34</td>
-      <td>30</td>
-      <td>...</td>
-      <td>163.4000</td>
-      <td>78.655670</td>
-      <td>20.474462</td>
-      <td>0.000000</td>
-      <td>7.385222</td>
-      <td>8.098322</td>
-      <td>9.102449</td>
-      <td>1.654850</td>
-      <td>146.893208</td>
-      <td>41.751366</td>
-    </tr>
-    <tr>
-      <th>1584</th>
-      <td>Pocosol</td>
-      <td>21013</td>
-      <td>71753</td>
-      <td>76</td>
-      <td>59</td>
-      <td>135</td>
-      <td>28</td>
-      <td>19</td>
-      <td>42</td>
-      <td>37</td>
-      <td>...</td>
-      <td>151.3537</td>
-      <td>69.146787</td>
-      <td>20.474462</td>
-      <td>0.000000</td>
-      <td>7.385222</td>
-      <td>8.098322</td>
-      <td>9.102449</td>
-      <td>1.654850</td>
-      <td>137.989771</td>
-      <td>38.873298</td>
-    </tr>
-    <tr>
-      <th>1585</th>
-      <td>Pocosol</td>
-      <td>21013</td>
-      <td>71754</td>
-      <td>68</td>
-      <td>79</td>
-      <td>147</td>
-      <td>106</td>
+      <th>757</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72790</td>
+      <td>35</td>
       <td>40</td>
-      <td>0</td>
-      <td>0</td>
+      <td>75</td>
+      <td>46</td>
+      <td>14</td>
+      <td>6</td>
+      <td>9</td>
       <td>...</td>
-      <td>114.2685</td>
-      <td>39.873165</td>
-      <td>20.474462</td>
-      <td>0.000000</td>
-      <td>7.385222</td>
-      <td>8.098322</td>
-      <td>9.102449</td>
-      <td>1.654850</td>
-      <td>82.422717</td>
-      <td>20.911049</td>
+      <td>152.3600</td>
+      <td>64.840587</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.00000</td>
+      <td>10.00000</td>
+      <td>28.529665</td>
+      <td>10.000000</td>
+      <td>138.961329</td>
+      <td>41.154190</td>
     </tr>
     <tr>
-      <th>1586</th>
-      <td>Pocosol</td>
-      <td>21013</td>
-      <td>71755</td>
-      <td>89</td>
-      <td>68</td>
-      <td>157</td>
+      <th>758</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72791</td>
+      <td>47</td>
       <td>52</td>
-      <td>64</td>
-      <td>20</td>
-      <td>21</td>
+      <td>99</td>
+      <td>30</td>
+      <td>55</td>
+      <td>14</td>
+      <td>0</td>
       <td>...</td>
-      <td>174.0234</td>
-      <td>87.041371</td>
-      <td>20.474462</td>
-      <td>0.000000</td>
-      <td>7.385222</td>
-      <td>8.098322</td>
-      <td>9.102449</td>
-      <td>1.654850</td>
-      <td>168.223019</td>
-      <td>48.646303</td>
+      <td>142.8399</td>
+      <td>56.050641</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.00000</td>
+      <td>10.00000</td>
+      <td>28.529665</td>
+      <td>10.000000</td>
+      <td>149.906771</td>
+      <td>44.589431</td>
+    </tr>
+    <tr>
+      <th>759</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72792</td>
+      <td>48</td>
+      <td>38</td>
+      <td>86</td>
+      <td>6</td>
+      <td>31</td>
+      <td>25</td>
+      <td>24</td>
+      <td>...</td>
+      <td>152.3600</td>
+      <td>64.840587</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.00000</td>
+      <td>10.00000</td>
+      <td>28.529665</td>
+      <td>10.000000</td>
+      <td>155.406990</td>
+      <td>46.315682</td>
+    </tr>
+    <tr>
+      <th>760</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72793</td>
+      <td>58</td>
+      <td>53</td>
+      <td>111</td>
+      <td>15</td>
+      <td>18</td>
+      <td>37</td>
+      <td>32</td>
+      <td>...</td>
+      <td>152.3601</td>
+      <td>64.840679</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.00000</td>
+      <td>10.00000</td>
+      <td>28.529665</td>
+      <td>10.000000</td>
+      <td>185.927710</td>
+      <td>55.894649</td>
     </tr>
   </tbody>
 </table>
-<p>1587 rows × 46 columns</p>
+<p>761 rows × 46 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estructura</span>
-<span class="n">san_carlos</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 1587 entries, 0 to 1586
+RangeIndex: 761 entries, 0 to 760
 Data columns (total 46 columns):
  #   Column                                 Non-Null Count  Dtype  
 ---  ------                                 --------------  -----  
- 0   DISTRITO                               1587 non-null   object 
- 1   COD_DIST                               1587 non-null   int64  
- 2   UGM                                    1587 non-null   int64  
- 3   HOMBRES                                1587 non-null   int64  
- 4   MUJERES                                1587 non-null   int64  
- 5   TOTAL                                  1587 non-null   int64  
- 6   SIN_CARENCIAS                          1587 non-null   int64  
- 7   CARENCIAS_1                            1587 non-null   int64  
- 8   CARENCIAS_2                            1587 non-null   int64  
- 9   CARENCIAS_3                            1587 non-null   int64  
- 10  CARENCIAS_4                            1587 non-null   int64  
- 11  NULO                                   1587 non-null   int64  
- 12  TOTAL_CON_CARENCIAS                    1587 non-null   int64  
- 13  TOTAL.1                                1587 non-null   int64  
- 14  NORMALIZACION_BASE_100_CARENCIAS       1587 non-null   float64
- 15  SIN_LIMITACIONES                       1587 non-null   int64  
- 16  TOTAL_CON_LIMITACIONES                 1587 non-null   int64  
- 17  LIMITACION_VISUAL                      1587 non-null   int64  
- 18  LIMITACION_AUDITIVA                    1587 non-null   int64  
- 19  LIMITACION_HABLAR                      1587 non-null   int64  
- 20  LIMITACION_CAMINAR                     1587 non-null   int64  
- 21  LIMITACION_BRAZOS_Y_PIERNAS            1587 non-null   int64  
- 22  LIMITACION_INTELECTUAL                 1587 non-null   int64  
- 23  LIMITACION_MENTAL                      1587 non-null   int64  
- 24  TOTAL.2                                1587 non-null   int64  
- 25  NORMALIZACION_BASE_100_LIMITACIONES    1587 non-null   float64
- 26  DEPENDENCIA_EDAD_0_14                  1587 non-null   int64  
- 27  DEPENDENCIA_EDAD_MAYORIGUAL_65         1587 non-null   int64  
- 28  EDAD_15_64                             1587 non-null   int64  
- 29  TOTAL_DEPENDIENTE                      1587 non-null   int64  
- 30  TOTAL.3                                1587 non-null   int64  
- 31  NORMALIZACION_BASE_100_DEPENDIENTES    1587 non-null   float64
- 32  POBLACION_DESOCUPADA                   1587 non-null   int64  
- 33  POBLACION_OCUPADA                      1587 non-null   int64  
- 34  FUERA_DE_LA_FUERZA_LABORAL             1587 non-null   int64  
- 35  NORMALIZACION_BASE_100_DESOCUPADOS     1587 non-null   float64
- 36  MEDIOS_DE_VIDA                         1587 non-null   float64
- 37  NORMALIZACION_BASE_100_MEDIOS_DE_VIDA  1587 non-null   float64
- 38  LONGITUD_CAMINOS_PCT                   1587 non-null   float64
- 39  NORMALIZACION_BASE_100_10_CAMINOS      1587 non-null   float64
- 40  AREA_ASP_PCT                           1587 non-null   float64
- 41  NORMALIZACION_BASE_100_10_ASP          1587 non-null   float64
- 42  AREA_SOBREUSO_PCT                      1587 non-null   float64
- 43  NORMALIZACION_BASE_100_10_SOBREUSO     1587 non-null   float64
- 44  SUMA_VULNERABILIDADES                  1587 non-null   float64
- 45  INDICE_VULNERABILIDAD_INTEGRADO        1587 non-null   float64
+ 0   DISTRITO                               761 non-null    object 
+ 1   COD_DIST                               761 non-null    int64  
+ 2   UGM                                    761 non-null    int64  
+ 3   HOMBRES                                761 non-null    int64  
+ 4   MUJERES                                761 non-null    int64  
+ 5   TOTAL                                  761 non-null    int64  
+ 6   SIN_CARENCIAS                          761 non-null    int64  
+ 7   CARENCIAS_1                            761 non-null    int64  
+ 8   CARENCIAS_2                            761 non-null    int64  
+ 9   CARENCIAS_3                            761 non-null    int64  
+ 10  CARENCIAS_4                            761 non-null    int64  
+ 11  NULO                                   761 non-null    int64  
+ 12  TOTAL_CON_CARENCIAS                    761 non-null    int64  
+ 13  TOTAL.1                                761 non-null    int64  
+ 14  NORMALIZACION_BASE_100_CARENCIAS       761 non-null    float64
+ 15  SIN_LIMITACIONES                       761 non-null    int64  
+ 16  TOTAL_CON_LIMITACIONES                 761 non-null    int64  
+ 17  LIMITACION_VISUAL                      761 non-null    int64  
+ 18  LIMITACION_AUDITIVA                    761 non-null    int64  
+ 19  LIMITACION_HABLAR                      761 non-null    int64  
+ 20  LIMITACION_CAMINAR                     761 non-null    int64  
+ 21  LIMITACION_BRAZOS_Y_PIERNAS            761 non-null    int64  
+ 22  LIMITACION_INTELECTUAL                 761 non-null    int64  
+ 23  LIMITACION_MENTAL                      761 non-null    int64  
+ 24  TOTAL.2                                761 non-null    int64  
+ 25  NORMALIZACION_BASE_100_LIMITACIONES    761 non-null    float64
+ 26  DEPENDENCIA_EDAD_0_14                  761 non-null    int64  
+ 27  DEPENDENCIA_EDAD_MAYORIGUAL_65         761 non-null    int64  
+ 28  EDAD_15_64                             761 non-null    int64  
+ 29  TOTAL_DEPENDIENTE                      761 non-null    int64  
+ 30  TOTAL.3                                761 non-null    int64  
+ 31  NORMALIZACION_BASE_100_DEPENDIENTES    761 non-null    float64
+ 32  POBLACION_DESOCUPADA                   761 non-null    int64  
+ 33  POBLACION_OCUPADA                      761 non-null    int64  
+ 34  FUERA_DE_LA_FUERZA_LABORAL             761 non-null    int64  
+ 35  NORMALIZACION_BASE_100_DESOCUPADOS     761 non-null    float64
+ 36  MEDIOS_DE_VIDA                         761 non-null    float64
+ 37  NORMALIZACION_BASE_100_MEDIOS_DE_VIDA  761 non-null    float64
+ 38  LONGITUD_CAMINOS_PCT                   761 non-null    float64
+ 39  NORMALIZACION_BASE_100_10_CAMINOS      761 non-null    float64
+ 40  AREA_ASP_PCT                           761 non-null    float64
+ 41  NORMALIZACION_BASE_100_10_ASP          761 non-null    float64
+ 42  AREA_SOBREUSO_PCT                      761 non-null    float64
+ 43  NORMALIZACION_BASE_100_10_SOBREUSO     761 non-null    float64
+ 44  SUMA_VULNERABILIDADES                  761 non-null    float64
+ 45  INDICE_VULNERABILIDAD_INTEGRADO        761 non-null    float64
 dtypes: float64(14), int64(31), object(1)
-memory usage: 570.5+ KB
+memory usage: 273.6+ KB
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="graficos">
-<h3>Gráficos<a class="headerlink" href="#graficos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico de un subconjunto</span>
-<span class="n">san_carlos_s01</span> <span class="o">=</span> <span class="n">san_carlos</span><span class="p">[[</span><span class="s2">&quot;HOMBRES&quot;</span><span class="p">,</span> <span class="s2">&quot;MUJERES&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_belennosarita</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[</span><span class="n">datos</span><span class="p">[</span><span class="s2">&quot;COD_DIST&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">50207</span><span class="p">]</span>
 
-<span class="n">san_carlos_s01</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
-</div>
-<img alt="_images/17-pandas_62_1.png" src="_images/17-pandas_62_1.png" />
-</div>
-</div>
-</div>
-<div class="section" id="histogramas">
-<h3>Histogramas<a class="headerlink" href="#histogramas" title="Permalink to this headline">¶</a></h3>
-<p>Muestran la distribución de una variable numérica.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histograma de la variable INDICE_VULNERABILIDAD_INTEGRADO</span>
-<span class="n">san_carlos</span><span class="p">[</span><span class="s2">&quot;INDICE_VULNERABILIDAD_INTEGRADO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;hist&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/17-pandas_64_1.png" src="_images/17-pandas_64_1.png" />
-</div>
-</div>
-</div>
-<div class="section" id="graficos-de-dispersion-scatterplots">
-<h3>Gráficos de dispersión (<em>scatterplots</em>)<a class="headerlink" href="#graficos-de-dispersion-scatterplots" title="Permalink to this headline">¶</a></h3>
-<p>Muestran la relación entre dos variables numéricas.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico de dispersión HOMBRES e INDICE_VULNERABILIDAD_INTEGRADO</span>
-<span class="n">san_carlos</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;HOMBRES&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;INDICE_VULNERABILIDAD_INTEGRADO&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;HOMBRES&#39;, ylabel=&#39;INDICE_VULNERABILIDAD_INTEGRADO&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/17-pandas_66_1.png" src="_images/17-pandas_66_1.png" />
-</div>
-</div>
-</div>
-<div class="section" id="analisis-de-correlacion">
-<h3>Análisis de correlación<a class="headerlink" href="#analisis-de-correlacion" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correlaciones de un subconjunto de datos</span>
-<span class="n">san_carlos_s01</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">datos_belennosarita</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3180,51 +3159,7 @@ memory usage: 570.5+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>HOMBRES</th>
-      <th>MUJERES</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>HOMBRES</th>
-      <td>1.000000</td>
-      <td>0.932497</td>
-    </tr>
-    <tr>
-      <th>MUJERES</th>
-      <td>0.932497</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correlaciones de todo el conjunto de datos</span>
-<span class="n">san_carlos</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
+      <th>DISTRITO</th>
       <th>COD_DIST</th>
       <th>UGM</th>
       <th>HOMBRES</th>
@@ -3234,7 +3169,6 @@ memory usage: 570.5+ KB
       <th>CARENCIAS_1</th>
       <th>CARENCIAS_2</th>
       <th>CARENCIAS_3</th>
-      <th>CARENCIAS_4</th>
       <th>...</th>
       <th>MEDIOS_DE_VIDA</th>
       <th>NORMALIZACION_BASE_100_MEDIOS_DE_VIDA</th>
@@ -3250,1089 +3184,232 @@ memory usage: 570.5+ KB
   </thead>
   <tbody>
     <tr>
-      <th>COD_DIST</th>
-      <td>1.000000</td>
-      <td>0.065767</td>
-      <td>-0.094951</td>
-      <td>-0.148244</td>
-      <td>-0.123783</td>
-      <td>-0.248896</td>
-      <td>0.047366</td>
-      <td>0.190167</td>
-      <td>0.199008</td>
-      <td>0.132401</td>
+      <th>760</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72793</td>
+      <td>58</td>
+      <td>53</td>
+      <td>111</td>
+      <td>15</td>
+      <td>18</td>
+      <td>37</td>
+      <td>32</td>
       <td>...</td>
-      <td>0.422077</td>
-      <td>0.430061</td>
-      <td>0.652589</td>
-      <td>-0.652589</td>
-      <td>0.080715</td>
-      <td>-0.080715</td>
-      <td>-0.261710</td>
-      <td>-0.261710</td>
-      <td>0.217983</td>
-      <td>0.217983</td>
+      <td>152.3601</td>
+      <td>64.840679</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>28.529665</td>
+      <td>10.0</td>
+      <td>185.927710</td>
+      <td>55.894649</td>
     </tr>
     <tr>
-      <th>UGM</th>
-      <td>0.065767</td>
-      <td>1.000000</td>
-      <td>0.102684</td>
-      <td>0.063102</td>
-      <td>0.084269</td>
-      <td>0.017225</td>
-      <td>0.106912</td>
-      <td>0.117773</td>
-      <td>0.151058</td>
-      <td>0.031122</td>
+      <th>755</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>49320</td>
+      <td>9</td>
+      <td>9</td>
+      <td>18</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
       <td>...</td>
-      <td>0.063966</td>
-      <td>0.063361</td>
-      <td>0.066283</td>
-      <td>-0.066283</td>
-      <td>0.198025</td>
-      <td>-0.198025</td>
-      <td>-0.029116</td>
-      <td>-0.029116</td>
-      <td>0.119033</td>
-      <td>0.119033</td>
+      <td>161.8800</td>
+      <td>73.630440</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>28.529665</td>
+      <td>10.0</td>
+      <td>108.143756</td>
+      <td>31.482054</td>
     </tr>
     <tr>
-      <th>HOMBRES</th>
-      <td>-0.094951</td>
-      <td>0.102684</td>
-      <td>1.000000</td>
-      <td>0.932497</td>
-      <td>0.982878</td>
-      <td>0.857533</td>
-      <td>0.745010</td>
-      <td>0.416081</td>
-      <td>0.223357</td>
-      <td>0.048277</td>
+      <th>756</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>72789</td>
+      <td>35</td>
+      <td>32</td>
+      <td>67</td>
+      <td>0</td>
+      <td>47</td>
+      <td>16</td>
+      <td>4</td>
       <td>...</td>
-      <td>-0.448063</td>
-      <td>-0.458844</td>
-      <td>-0.030330</td>
-      <td>0.030330</td>
-      <td>0.038645</td>
-      <td>-0.038645</td>
-      <td>0.024784</td>
-      <td>0.024784</td>
-      <td>0.563132</td>
-      <td>0.563132</td>
+      <td>171.4000</td>
+      <td>82.420293</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>28.529665</td>
+      <td>10.0</td>
+      <td>157.692386</td>
+      <td>47.032956</td>
     </tr>
     <tr>
-      <th>MUJERES</th>
-      <td>-0.148244</td>
-      <td>0.063102</td>
-      <td>0.932497</td>
-      <td>1.000000</td>
-      <td>0.983081</td>
-      <td>0.917985</td>
-      <td>0.753653</td>
-      <td>0.387194</td>
-      <td>0.195483</td>
-      <td>0.029123</td>
+      <th>741</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>48336</td>
+      <td>10</td>
+      <td>12</td>
+      <td>22</td>
+      <td>14</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
       <td>...</td>
-      <td>-0.516431</td>
-      <td>-0.528355</td>
-      <td>-0.050852</td>
-      <td>0.050852</td>
-      <td>0.012595</td>
-      <td>-0.012595</td>
-      <td>0.063492</td>
-      <td>0.063492</td>
-      <td>0.513650</td>
-      <td>0.513650</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>28.529665</td>
+      <td>10.0</td>
+      <td>39.549190</td>
+      <td>9.953560</td>
     </tr>
     <tr>
-      <th>TOTAL</th>
-      <td>-0.123783</td>
-      <td>0.084269</td>
-      <td>0.982878</td>
-      <td>0.983081</td>
-      <td>1.000000</td>
-      <td>0.903221</td>
-      <td>0.762319</td>
-      <td>0.408549</td>
-      <td>0.213005</td>
-      <td>0.039341</td>
+      <th>738</th>
+      <td>Belén de Nosarita</td>
+      <td>50207</td>
+      <td>48241</td>
+      <td>39</td>
+      <td>39</td>
+      <td>78</td>
+      <td>40</td>
+      <td>38</td>
+      <td>0</td>
+      <td>0</td>
       <td>...</td>
-      <td>-0.490700</td>
-      <td>-0.502251</td>
-      <td>-0.041324</td>
-      <td>0.041324</td>
-      <td>0.026025</td>
-      <td>-0.026025</td>
-      <td>0.044960</td>
-      <td>0.044960</td>
-      <td>0.547639</td>
-      <td>0.547639</td>
-    </tr>
-    <tr>
-      <th>SIN_CARENCIAS</th>
-      <td>-0.248896</td>
-      <td>0.017225</td>
-      <td>0.857533</td>
-      <td>0.917985</td>
-      <td>0.903221</td>
-      <td>1.000000</td>
-      <td>0.497155</td>
-      <td>0.080834</td>
-      <td>-0.038643</td>
-      <td>-0.094660</td>
-      <td>...</td>
-      <td>-0.620171</td>
-      <td>-0.633841</td>
-      <td>-0.156957</td>
-      <td>0.156957</td>
-      <td>-0.009438</td>
-      <td>0.009438</td>
-      <td>0.120044</td>
-      <td>0.120044</td>
-      <td>0.260061</td>
-      <td>0.260061</td>
-    </tr>
-    <tr>
-      <th>CARENCIAS_1</th>
-      <td>0.047366</td>
-      <td>0.106912</td>
-      <td>0.745010</td>
-      <td>0.753653</td>
-      <td>0.762319</td>
-      <td>0.497155</td>
-      <td>1.000000</td>
-      <td>0.512150</td>
-      <td>0.263598</td>
-      <td>0.056508</td>
-      <td>...</td>
-      <td>-0.208563</td>
-      <td>-0.215166</td>
-      <td>0.065518</td>
-      <td>-0.065518</td>
-      <td>0.046546</td>
-      <td>-0.046546</td>
-      <td>-0.061467</td>
-      <td>-0.061467</td>
-      <td>0.674005</td>
-      <td>0.674005</td>
-    </tr>
-    <tr>
-      <th>CARENCIAS_2</th>
-      <td>0.190167</td>
-      <td>0.117773</td>
-      <td>0.416081</td>
-      <td>0.387194</td>
-      <td>0.408549</td>
-      <td>0.080834</td>
-      <td>0.512150</td>
-      <td>1.000000</td>
-      <td>0.535199</td>
-      <td>0.256445</td>
-      <td>...</td>
-      <td>0.111491</td>
-      <td>0.113527</td>
-      <td>0.243062</td>
-      <td>-0.243062</td>
-      <td>0.074707</td>
-      <td>-0.074707</td>
-      <td>-0.117469</td>
-      <td>-0.117469</td>
-      <td>0.649562</td>
-      <td>0.649562</td>
-    </tr>
-    <tr>
-      <th>CARENCIAS_3</th>
-      <td>0.199008</td>
-      <td>0.151058</td>
-      <td>0.223357</td>
-      <td>0.195483</td>
-      <td>0.213005</td>
-      <td>-0.038643</td>
-      <td>0.263598</td>
-      <td>0.535199</td>
-      <td>1.000000</td>
-      <td>0.408232</td>
-      <td>...</td>
-      <td>0.173265</td>
-      <td>0.177252</td>
-      <td>0.261865</td>
-      <td>-0.261865</td>
-      <td>0.064769</td>
-      <td>-0.064769</td>
-      <td>-0.111701</td>
-      <td>-0.111701</td>
-      <td>0.494593</td>
-      <td>0.494593</td>
-    </tr>
-    <tr>
-      <th>CARENCIAS_4</th>
-      <td>0.132401</td>
-      <td>0.031122</td>
-      <td>0.048277</td>
-      <td>0.029123</td>
-      <td>0.039341</td>
-      <td>-0.094660</td>
-      <td>0.056508</td>
-      <td>0.256445</td>
-      <td>0.408232</td>
-      <td>1.000000</td>
-      <td>...</td>
-      <td>0.115958</td>
-      <td>0.116946</td>
-      <td>0.175270</td>
-      <td>-0.175270</td>
-      <td>0.025455</td>
-      <td>-0.025455</td>
-      <td>-0.040277</td>
-      <td>-0.040277</td>
-      <td>0.227949</td>
-      <td>0.227949</td>
-    </tr>
-    <tr>
-      <th>NULO</th>
-      <td>0.015200</td>
-      <td>0.070370</td>
-      <td>0.281448</td>
-      <td>-0.001331</td>
-      <td>0.142059</td>
-      <td>0.002364</td>
-      <td>-0.013072</td>
-      <td>0.005620</td>
-      <td>-0.010031</td>
-      <td>-0.005448</td>
-      <td>...</td>
-      <td>0.020994</td>
-      <td>0.021060</td>
-      <td>-0.023854</td>
-      <td>0.023854</td>
-      <td>0.018867</td>
-      <td>-0.018867</td>
-      <td>-0.000196</td>
-      <td>-0.000196</td>
-      <td>0.099964</td>
-      <td>0.099964</td>
-    </tr>
-    <tr>
-      <th>TOTAL_CON_CARENCIAS</th>
-      <td>0.140303</td>
-      <td>0.141193</td>
-      <td>0.689288</td>
-      <td>0.679142</td>
-      <td>0.696047</td>
-      <td>0.351659</td>
-      <td>0.902354</td>
-      <td>0.800764</td>
-      <td>0.561682</td>
-      <td>0.256477</td>
-      <td>...</td>
-      <td>-0.065321</td>
-      <td>-0.068325</td>
-      <td>0.184353</td>
-      <td>-0.184353</td>
-      <td>0.070109</td>
-      <td>-0.070109</td>
-      <td>-0.104053</td>
-      <td>-0.104053</td>
-      <td>0.779968</td>
-      <td>0.779968</td>
-    </tr>
-    <tr>
-      <th>TOTAL.1</th>
-      <td>-0.123783</td>
-      <td>0.084269</td>
-      <td>0.982878</td>
-      <td>0.983081</td>
-      <td>1.000000</td>
-      <td>0.903221</td>
-      <td>0.762319</td>
-      <td>0.408549</td>
-      <td>0.213005</td>
-      <td>0.039341</td>
-      <td>...</td>
-      <td>-0.490700</td>
-      <td>-0.502251</td>
-      <td>-0.041324</td>
-      <td>0.041324</td>
-      <td>0.026025</td>
-      <td>-0.026025</td>
-      <td>0.044960</td>
-      <td>0.044960</td>
-      <td>0.547639</td>
-      <td>0.547639</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_CARENCIAS</th>
-      <td>0.140303</td>
-      <td>0.141193</td>
-      <td>0.689288</td>
-      <td>0.679142</td>
-      <td>0.696047</td>
-      <td>0.351659</td>
-      <td>0.902354</td>
-      <td>0.800764</td>
-      <td>0.561682</td>
-      <td>0.256477</td>
-      <td>...</td>
-      <td>-0.065321</td>
-      <td>-0.068325</td>
-      <td>0.184353</td>
-      <td>-0.184353</td>
-      <td>0.070109</td>
-      <td>-0.070109</td>
-      <td>-0.104053</td>
-      <td>-0.104053</td>
-      <td>0.779968</td>
-      <td>0.779968</td>
-    </tr>
-    <tr>
-      <th>SIN_LIMITACIONES</th>
-      <td>-0.123241</td>
-      <td>0.083821</td>
-      <td>0.973487</td>
-      <td>0.982713</td>
-      <td>0.995050</td>
-      <td>0.899910</td>
-      <td>0.765184</td>
-      <td>0.415977</td>
-      <td>0.214068</td>
-      <td>0.038792</td>
-      <td>...</td>
-      <td>-0.487754</td>
-      <td>-0.499298</td>
-      <td>-0.043924</td>
-      <td>0.043924</td>
-      <td>0.032112</td>
-      <td>-0.032112</td>
-      <td>0.043007</td>
-      <td>0.043007</td>
-      <td>0.531530</td>
-      <td>0.531530</td>
-    </tr>
-    <tr>
-      <th>TOTAL_CON_LIMITACIONES</th>
-      <td>-0.087233</td>
-      <td>0.059951</td>
-      <td>0.728788</td>
-      <td>0.664872</td>
-      <td>0.708800</td>
-      <td>0.631973</td>
-      <td>0.493211</td>
-      <td>0.222495</td>
-      <td>0.135942</td>
-      <td>0.030401</td>
-      <td>...</td>
-      <td>-0.351475</td>
-      <td>-0.359308</td>
-      <td>-0.009383</td>
-      <td>0.009383</td>
-      <td>-0.025675</td>
-      <td>0.025675</td>
-      <td>0.044151</td>
-      <td>0.044151</td>
-      <td>0.483271</td>
-      <td>0.483271</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_VISUAL</th>
-      <td>-0.056256</td>
-      <td>0.053064</td>
-      <td>0.582315</td>
-      <td>0.497247</td>
-      <td>0.549000</td>
-      <td>0.480560</td>
-      <td>0.366471</td>
-      <td>0.148215</td>
-      <td>0.101173</td>
-      <td>0.022820</td>
-      <td>...</td>
-      <td>-0.257381</td>
-      <td>-0.263077</td>
-      <td>0.010032</td>
-      <td>-0.010032</td>
-      <td>-0.013724</td>
-      <td>0.013724</td>
-      <td>0.038125</td>
-      <td>0.038125</td>
-      <td>0.403892</td>
-      <td>0.403892</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_AUDITIVA</th>
-      <td>-0.062946</td>
-      <td>0.023359</td>
-      <td>0.580562</td>
-      <td>0.492813</td>
-      <td>0.545848</td>
-      <td>0.473289</td>
-      <td>0.353761</td>
-      <td>0.169317</td>
-      <td>0.110488</td>
-      <td>0.016942</td>
-      <td>...</td>
-      <td>-0.266264</td>
-      <td>-0.272969</td>
-      <td>-0.000456</td>
-      <td>0.000456</td>
-      <td>-0.036294</td>
-      <td>0.036294</td>
-      <td>0.034684</td>
-      <td>0.034684</td>
-      <td>0.350593</td>
-      <td>0.350593</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_HABLAR</th>
-      <td>-0.006679</td>
-      <td>0.025982</td>
-      <td>0.476901</td>
-      <td>0.434972</td>
-      <td>0.463768</td>
-      <td>0.384210</td>
-      <td>0.343422</td>
-      <td>0.199377</td>
-      <td>0.167999</td>
-      <td>0.066008</td>
-      <td>...</td>
-      <td>-0.188686</td>
-      <td>-0.193968</td>
-      <td>0.017738</td>
-      <td>-0.017738</td>
-      <td>-0.021808</td>
-      <td>0.021808</td>
-      <td>-0.004102</td>
-      <td>-0.004102</td>
-      <td>0.341613</td>
-      <td>0.341613</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_CAMINAR</th>
-      <td>-0.106622</td>
-      <td>0.056399</td>
-      <td>0.678765</td>
-      <td>0.643258</td>
-      <td>0.672404</td>
-      <td>0.629173</td>
-      <td>0.451846</td>
-      <td>0.190731</td>
-      <td>0.080093</td>
-      <td>-0.005532</td>
-      <td>...</td>
-      <td>-0.357483</td>
-      <td>-0.365420</td>
-      <td>-0.038915</td>
-      <td>0.038915</td>
-      <td>-0.048052</td>
-      <td>0.048052</td>
-      <td>0.054920</td>
-      <td>0.054920</td>
-      <td>0.404629</td>
-      <td>0.404629</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_BRAZOS_Y_PIERNAS</th>
-      <td>-0.065722</td>
-      <td>0.018961</td>
-      <td>0.550236</td>
-      <td>0.499648</td>
-      <td>0.533956</td>
-      <td>0.481412</td>
-      <td>0.349009</td>
-      <td>0.166239</td>
-      <td>0.057977</td>
-      <td>-0.027403</td>
-      <td>...</td>
-      <td>-0.254578</td>
-      <td>-0.261056</td>
-      <td>-0.011634</td>
-      <td>0.011634</td>
-      <td>-0.074422</td>
-      <td>0.074422</td>
-      <td>0.050371</td>
-      <td>0.050371</td>
-      <td>0.332697</td>
-      <td>0.332697</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_INTELECTUAL</th>
-      <td>-0.058736</td>
-      <td>-0.001028</td>
-      <td>0.469068</td>
-      <td>0.471099</td>
-      <td>0.478226</td>
-      <td>0.423269</td>
-      <td>0.371799</td>
-      <td>0.205563</td>
-      <td>0.116580</td>
-      <td>0.029365</td>
-      <td>...</td>
-      <td>-0.235502</td>
-      <td>-0.240367</td>
-      <td>-0.027559</td>
-      <td>0.027559</td>
-      <td>-0.010072</td>
-      <td>0.010072</td>
-      <td>0.031619</td>
-      <td>0.031619</td>
-      <td>0.331386</td>
-      <td>0.331386</td>
-    </tr>
-    <tr>
-      <th>LIMITACION_MENTAL</th>
-      <td>-0.057785</td>
-      <td>0.028613</td>
-      <td>0.408214</td>
-      <td>0.362000</td>
-      <td>0.391706</td>
-      <td>0.345880</td>
-      <td>0.271573</td>
-      <td>0.100344</td>
-      <td>0.020070</td>
-      <td>-0.019348</td>
-      <td>...</td>
-      <td>-0.214132</td>
-      <td>-0.219237</td>
-      <td>-0.065803</td>
-      <td>0.065803</td>
-      <td>-0.018064</td>
-      <td>0.018064</td>
-      <td>0.049818</td>
-      <td>0.049818</td>
-      <td>0.227841</td>
-      <td>0.227841</td>
-    </tr>
-    <tr>
-      <th>TOTAL.2</th>
-      <td>-0.123783</td>
-      <td>0.084269</td>
-      <td>0.982878</td>
-      <td>0.983081</td>
-      <td>1.000000</td>
-      <td>0.903221</td>
-      <td>0.762319</td>
-      <td>0.408549</td>
-      <td>0.213005</td>
-      <td>0.039341</td>
-      <td>...</td>
-      <td>-0.490700</td>
-      <td>-0.502251</td>
-      <td>-0.041324</td>
-      <td>0.041324</td>
-      <td>0.026025</td>
-      <td>-0.026025</td>
-      <td>0.044960</td>
-      <td>0.044960</td>
-      <td>0.547639</td>
-      <td>0.547639</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_LIMITACIONES</th>
-      <td>-0.087233</td>
-      <td>0.059951</td>
-      <td>0.728788</td>
-      <td>0.664872</td>
-      <td>0.708800</td>
-      <td>0.631973</td>
-      <td>0.493211</td>
-      <td>0.222495</td>
-      <td>0.135942</td>
-      <td>0.030401</td>
-      <td>...</td>
-      <td>-0.351475</td>
-      <td>-0.359308</td>
-      <td>-0.009383</td>
-      <td>0.009383</td>
-      <td>-0.025675</td>
-      <td>0.025675</td>
-      <td>0.044151</td>
-      <td>0.044151</td>
-      <td>0.483271</td>
-      <td>0.483271</td>
-    </tr>
-    <tr>
-      <th>DEPENDENCIA_EDAD_0_14</th>
-      <td>-0.037514</td>
-      <td>0.068263</td>
-      <td>0.910257</td>
-      <td>0.940635</td>
-      <td>0.941516</td>
-      <td>0.797449</td>
-      <td>0.810927</td>
-      <td>0.525192</td>
-      <td>0.319246</td>
-      <td>0.093523</td>
-      <td>...</td>
-      <td>-0.375645</td>
-      <td>-0.385007</td>
-      <td>0.021344</td>
-      <td>-0.021344</td>
-      <td>0.052371</td>
-      <td>-0.052371</td>
-      <td>-0.027343</td>
-      <td>-0.027343</td>
-      <td>0.641539</td>
-      <td>0.641539</td>
-    </tr>
-    <tr>
-      <th>DEPENDENCIA_EDAD_MAYORIGUAL_65</th>
-      <td>-0.205861</td>
-      <td>0.060456</td>
-      <td>0.668965</td>
-      <td>0.684585</td>
-      <td>0.688517</td>
-      <td>0.688539</td>
-      <td>0.442127</td>
-      <td>0.148797</td>
-      <td>0.044878</td>
-      <td>0.004170</td>
-      <td>...</td>
-      <td>-0.467305</td>
-      <td>-0.478275</td>
-      <td>-0.091484</td>
-      <td>0.091484</td>
-      <td>-0.090276</td>
-      <td>0.090276</td>
-      <td>0.166599</td>
-      <td>0.166599</td>
-      <td>0.292433</td>
-      <td>0.292433</td>
-    </tr>
-    <tr>
-      <th>EDAD_15_64</th>
-      <td>-0.146320</td>
-      <td>0.088309</td>
-      <td>0.980879</td>
-      <td>0.965390</td>
-      <td>0.989961</td>
-      <td>0.911606</td>
-      <td>0.720240</td>
-      <td>0.353359</td>
-      <td>0.166629</td>
-      <td>0.015158</td>
-      <td>...</td>
-      <td>-0.512011</td>
-      <td>-0.523826</td>
-      <td>-0.062144</td>
-      <td>0.062144</td>
-      <td>0.024424</td>
-      <td>-0.024424</td>
-      <td>0.062329</td>
-      <td>0.062329</td>
-      <td>0.492704</td>
-      <td>0.492704</td>
-    </tr>
-    <tr>
-      <th>TOTAL_DEPENDIENTE</th>
-      <td>-0.074494</td>
-      <td>0.072015</td>
-      <td>0.932537</td>
-      <td>0.962302</td>
-      <td>0.963869</td>
-      <td>0.837696</td>
-      <td>0.799659</td>
-      <td>0.490074</td>
-      <td>0.288682</td>
-      <td>0.082754</td>
-      <td>...</td>
-      <td>-0.423520</td>
-      <td>-0.433938</td>
-      <td>0.000189</td>
-      <td>-0.000189</td>
-      <td>0.027608</td>
-      <td>-0.027608</td>
-      <td>0.009750</td>
-      <td>0.009750</td>
-      <td>0.621026</td>
-      <td>0.621026</td>
-    </tr>
-    <tr>
-      <th>TOTAL.3</th>
-      <td>-0.123783</td>
-      <td>0.084269</td>
-      <td>0.982878</td>
-      <td>0.983081</td>
-      <td>1.000000</td>
-      <td>0.903221</td>
-      <td>0.762319</td>
-      <td>0.408549</td>
-      <td>0.213005</td>
-      <td>0.039341</td>
-      <td>...</td>
-      <td>-0.490700</td>
-      <td>-0.502251</td>
-      <td>-0.041324</td>
-      <td>0.041324</td>
-      <td>0.026025</td>
-      <td>-0.026025</td>
-      <td>0.044960</td>
-      <td>0.044960</td>
-      <td>0.547639</td>
-      <td>0.547639</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_DEPENDIENTES</th>
-      <td>-0.074494</td>
-      <td>0.072015</td>
-      <td>0.932537</td>
-      <td>0.962302</td>
-      <td>0.963869</td>
-      <td>0.837696</td>
-      <td>0.799659</td>
-      <td>0.490074</td>
-      <td>0.288682</td>
-      <td>0.082754</td>
-      <td>...</td>
-      <td>-0.423520</td>
-      <td>-0.433938</td>
-      <td>0.000189</td>
-      <td>-0.000189</td>
-      <td>0.027608</td>
-      <td>-0.027608</td>
-      <td>0.009750</td>
-      <td>0.009750</td>
-      <td>0.621026</td>
-      <td>0.621026</td>
-    </tr>
-    <tr>
-      <th>POBLACION_DESOCUPADA</th>
-      <td>-0.052541</td>
-      <td>0.035331</td>
-      <td>0.460490</td>
-      <td>0.471566</td>
-      <td>0.474114</td>
-      <td>0.391987</td>
-      <td>0.388381</td>
-      <td>0.308283</td>
-      <td>0.237006</td>
-      <td>0.134647</td>
-      <td>...</td>
-      <td>-0.190196</td>
-      <td>-0.195479</td>
-      <td>-0.014215</td>
-      <td>0.014215</td>
-      <td>0.036578</td>
-      <td>-0.036578</td>
-      <td>-0.004854</td>
-      <td>-0.004854</td>
-      <td>0.511219</td>
-      <td>0.511219</td>
-    </tr>
-    <tr>
-      <th>POBLACION_OCUPADA</th>
-      <td>-0.200735</td>
-      <td>0.085272</td>
-      <td>0.920820</td>
-      <td>0.946151</td>
-      <td>0.949687</td>
-      <td>0.933685</td>
-      <td>0.652669</td>
-      <td>0.269798</td>
-      <td>0.108464</td>
-      <td>-0.016375</td>
-      <td>...</td>
-      <td>-0.557707</td>
-      <td>-0.571002</td>
-      <td>-0.101637</td>
-      <td>0.101637</td>
-      <td>0.052351</td>
-      <td>-0.052351</td>
-      <td>0.101231</td>
-      <td>0.101231</td>
-      <td>0.386050</td>
-      <td>0.386050</td>
-    </tr>
-    <tr>
-      <th>FUERA_DE_LA_FUERZA_LABORAL</th>
-      <td>-0.089195</td>
-      <td>0.083791</td>
-      <td>0.960425</td>
-      <td>0.917660</td>
-      <td>0.955238</td>
-      <td>0.825712</td>
-      <td>0.736715</td>
-      <td>0.408606</td>
-      <td>0.210970</td>
-      <td>0.049238</td>
-      <td>...</td>
-      <td>-0.440987</td>
-      <td>-0.450884</td>
-      <td>-0.016992</td>
-      <td>0.016992</td>
-      <td>-0.025128</td>
-      <td>0.025128</td>
-      <td>0.035647</td>
-      <td>0.035647</td>
-      <td>0.556331</td>
-      <td>0.556331</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_DESOCUPADOS</th>
-      <td>-0.052541</td>
-      <td>0.035331</td>
-      <td>0.460490</td>
-      <td>0.471566</td>
-      <td>0.474114</td>
-      <td>0.391987</td>
-      <td>0.388381</td>
-      <td>0.308283</td>
-      <td>0.237006</td>
-      <td>0.134647</td>
-      <td>...</td>
-      <td>-0.190196</td>
-      <td>-0.195479</td>
-      <td>-0.014215</td>
-      <td>0.014215</td>
-      <td>0.036578</td>
-      <td>-0.036578</td>
-      <td>-0.004854</td>
-      <td>-0.004854</td>
-      <td>0.511219</td>
-      <td>0.511219</td>
-    </tr>
-    <tr>
-      <th>MEDIOS_DE_VIDA</th>
-      <td>0.422077</td>
-      <td>0.063966</td>
-      <td>-0.448063</td>
-      <td>-0.516431</td>
-      <td>-0.490700</td>
-      <td>-0.620171</td>
-      <td>-0.208563</td>
-      <td>0.111491</td>
-      <td>0.173265</td>
-      <td>0.115958</td>
-      <td>...</td>
-      <td>1.000000</td>
-      <td>0.995491</td>
-      <td>0.284961</td>
-      <td>-0.284961</td>
-      <td>0.112124</td>
-      <td>-0.112124</td>
-      <td>-0.232465</td>
-      <td>-0.232465</td>
-      <td>0.357296</td>
-      <td>0.357296</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_MEDIOS_DE_VIDA</th>
-      <td>0.430061</td>
-      <td>0.063361</td>
-      <td>-0.458844</td>
-      <td>-0.528355</td>
-      <td>-0.502251</td>
-      <td>-0.633841</td>
-      <td>-0.215166</td>
-      <td>0.113527</td>
-      <td>0.177252</td>
-      <td>0.116946</td>
-      <td>...</td>
-      <td>0.995491</td>
-      <td>1.000000</td>
-      <td>0.293581</td>
-      <td>-0.293581</td>
-      <td>0.113970</td>
-      <td>-0.113970</td>
-      <td>-0.236167</td>
-      <td>-0.236167</td>
-      <td>0.351042</td>
-      <td>0.351042</td>
-    </tr>
-    <tr>
-      <th>LONGITUD_CAMINOS_PCT</th>
-      <td>0.652589</td>
-      <td>0.066283</td>
-      <td>-0.030330</td>
-      <td>-0.050852</td>
-      <td>-0.041324</td>
-      <td>-0.156957</td>
-      <td>0.065518</td>
-      <td>0.243062</td>
-      <td>0.261865</td>
-      <td>0.175270</td>
-      <td>...</td>
-      <td>0.284961</td>
-      <td>0.293581</td>
-      <td>1.000000</td>
-      <td>-1.000000</td>
-      <td>-0.059956</td>
-      <td>0.059956</td>
-      <td>-0.278400</td>
-      <td>-0.278400</td>
-      <td>0.174296</td>
-      <td>0.174296</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_10_CAMINOS</th>
-      <td>-0.652589</td>
-      <td>-0.066283</td>
-      <td>0.030330</td>
-      <td>0.050852</td>
-      <td>0.041324</td>
-      <td>0.156957</td>
-      <td>-0.065518</td>
-      <td>-0.243062</td>
-      <td>-0.261865</td>
-      <td>-0.175270</td>
-      <td>...</td>
-      <td>-0.284961</td>
-      <td>-0.293581</td>
-      <td>-1.000000</td>
-      <td>1.000000</td>
-      <td>0.059956</td>
-      <td>-0.059956</td>
-      <td>0.278400</td>
-      <td>0.278400</td>
-      <td>-0.174296</td>
-      <td>-0.174296</td>
-    </tr>
-    <tr>
-      <th>AREA_ASP_PCT</th>
-      <td>0.080715</td>
-      <td>0.198025</td>
-      <td>0.038645</td>
-      <td>0.012595</td>
-      <td>0.026025</td>
-      <td>-0.009438</td>
-      <td>0.046546</td>
-      <td>0.074707</td>
-      <td>0.064769</td>
-      <td>0.025455</td>
-      <td>...</td>
-      <td>0.112124</td>
-      <td>0.113970</td>
-      <td>-0.059956</td>
-      <td>0.059956</td>
-      <td>1.000000</td>
-      <td>-1.000000</td>
-      <td>-0.275733</td>
-      <td>-0.275733</td>
-      <td>-0.000037</td>
-      <td>-0.000037</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_10_ASP</th>
-      <td>-0.080715</td>
-      <td>-0.198025</td>
-      <td>-0.038645</td>
-      <td>-0.012595</td>
-      <td>-0.026025</td>
-      <td>0.009438</td>
-      <td>-0.046546</td>
-      <td>-0.074707</td>
-      <td>-0.064769</td>
-      <td>-0.025455</td>
-      <td>...</td>
-      <td>-0.112124</td>
-      <td>-0.113970</td>
-      <td>0.059956</td>
-      <td>-0.059956</td>
-      <td>-1.000000</td>
-      <td>1.000000</td>
-      <td>0.275733</td>
-      <td>0.275733</td>
-      <td>0.000037</td>
-      <td>0.000037</td>
-    </tr>
-    <tr>
-      <th>AREA_SOBREUSO_PCT</th>
-      <td>-0.261710</td>
-      <td>-0.029116</td>
-      <td>0.024784</td>
-      <td>0.063492</td>
-      <td>0.044960</td>
-      <td>0.120044</td>
-      <td>-0.061467</td>
-      <td>-0.117469</td>
-      <td>-0.111701</td>
-      <td>-0.040277</td>
-      <td>...</td>
-      <td>-0.232465</td>
-      <td>-0.236167</td>
-      <td>-0.278400</td>
-      <td>0.278400</td>
-      <td>-0.275733</td>
-      <td>0.275733</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>-0.072058</td>
-      <td>-0.072058</td>
-    </tr>
-    <tr>
-      <th>NORMALIZACION_BASE_100_10_SOBREUSO</th>
-      <td>-0.261710</td>
-      <td>-0.029116</td>
-      <td>0.024784</td>
-      <td>0.063492</td>
-      <td>0.044960</td>
-      <td>0.120044</td>
-      <td>-0.061467</td>
-      <td>-0.117469</td>
-      <td>-0.111701</td>
-      <td>-0.040277</td>
-      <td>...</td>
-      <td>-0.232465</td>
-      <td>-0.236167</td>
-      <td>-0.278400</td>
-      <td>0.278400</td>
-      <td>-0.275733</td>
-      <td>0.275733</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>-0.072058</td>
-      <td>-0.072058</td>
-    </tr>
-    <tr>
-      <th>SUMA_VULNERABILIDADES</th>
-      <td>0.217983</td>
-      <td>0.119033</td>
-      <td>0.563132</td>
-      <td>0.513650</td>
-      <td>0.547639</td>
-      <td>0.260061</td>
-      <td>0.674005</td>
-      <td>0.649562</td>
-      <td>0.494593</td>
-      <td>0.227949</td>
-      <td>...</td>
-      <td>0.357296</td>
-      <td>0.351042</td>
-      <td>0.174296</td>
-      <td>-0.174296</td>
-      <td>-0.000037</td>
-      <td>0.000037</td>
-      <td>-0.072058</td>
-      <td>-0.072058</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>INDICE_VULNERABILIDAD_INTEGRADO</th>
-      <td>0.217983</td>
-      <td>0.119033</td>
-      <td>0.563132</td>
-      <td>0.513650</td>
-      <td>0.547639</td>
-      <td>0.260061</td>
-      <td>0.674005</td>
-      <td>0.649562</td>
-      <td>0.494593</td>
-      <td>0.227949</td>
-      <td>...</td>
-      <td>0.357296</td>
-      <td>0.351042</td>
-      <td>0.174296</td>
-      <td>-0.174296</td>
-      <td>-0.000037</td>
-      <td>0.000037</td>
-      <td>-0.072058</td>
-      <td>-0.072058</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
+      <td>142.8400</td>
+      <td>56.050734</td>
+      <td>10.698224</td>
+      <td>7.602904</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>28.529665</td>
+      <td>10.0</td>
+      <td>125.340579</td>
+      <td>36.879299</td>
     </tr>
   </tbody>
 </table>
-<p>45 rows × 45 columns</p>
+<p>5 rows × 46 columns</p>
 </div></div></div>
+</div>
+</div>
+<div class="section" id="distribucion-porcentual-de-la-poblacion-a-nivel-de-distrito">
+<h3>Distribución porcentual de la población a nivel de distrito<a class="headerlink" href="#distribucion-porcentual-de-la-poblacion-a-nivel-de-distrito" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suma de población por distrito</span>
+<span class="n">poblacion_x_distrito</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="s1">&#39;DISTRITO&#39;</span><span class="p">])[</span><span class="s1">&#39;TOTAL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">poblacion_x_distrito</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DISTRITO
+Belén de Nosarita      2686
+Mansión                5717
+Nicoya                24833
+Nosara                 4912
+Quebrada Honda         2523
+San Antonio            6642
+Sámara                 3512
+Name: TOTAL, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico de pastel</span>
+<span class="n">poblacion_x_distrito</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;TOTAL&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/17-pandas_67_1.png" src="_images/17-pandas_67_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="caracteristicas-de-la-poblacion-dependiente">
+<h3>Características de la población dependiente<a class="headerlink" href="#caracteristicas-de-la-poblacion-dependiente" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suma de población dependiente por distrito</span>
+<span class="n">poblaciondependiente_x_distrito</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="s1">&#39;DISTRITO&#39;</span><span class="p">])[</span><span class="s1">&#39;TOTAL_DEPENDIENTE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">poblaciondependiente_x_distrito</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DISTRITO
+Belén de Nosarita      971
+Mansión               1985
+Nicoya                8187
+Nosara                1659
+Quebrada Honda         857
+San Antonio           2285
+Sámara                1134
+Name: TOTAL_DEPENDIENTE, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico de barras</span>
+<span class="n">poblaciondependiente_x_distrito</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;DISTRITO&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/17-pandas_70_1.png" src="_images/17-pandas_70_1.png" />
+</div>
+</div>
+<div class="section" id="necesidades-basicas-insatisfechas">
+<h4>Necesidades básicas insatisfechas<a class="headerlink" href="#necesidades-basicas-insatisfechas" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="belen-de-nosarita">
+<h5>Belén de Nosarita<a class="headerlink" href="#belen-de-nosarita" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_belennosarita_x_nbi</span> <span class="o">=</span> <span class="n">datos_belennosarita</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="s1">&#39;DISTRITO&#39;</span><span class="p">])[</span><span class="s1">&#39;TOTAL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_125017</span><span class="o">/</span><span class="mf">2352647589.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">datos_belennosarita_x_nbi</span> <span class="o">=</span> <span class="n">datos_belennosarita</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="s1">&#39;DISTRITO&#39;</span><span class="p">])[</span><span class="s1">&#39;TOTAL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: &#39;DataFrame&#39; object is not callable
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -4377,10 +3454,10 @@ memory usage: 570.5+ KB
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="recursos.html" title="next page">
+        <a class="right-next" href="18-geopandas.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Recursos</p>
+                <p class="prevnext-title">La biblioteca geopandas</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
