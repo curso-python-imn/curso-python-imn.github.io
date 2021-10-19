@@ -330,72 +330,82 @@ plt.ylabel('Cantidad de registros',fontsize=16);
 plt.legend()
 
 
-# ## Datos del IMN
+# # Análisis de riesgo ante eventos hidrometeorológicos extremos
+
+# ## Nicoya
 
 # In[30]:
 
 
-san_carlos = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/analisis-riesgo/indicadores-vulnerabilidad-SAN%20CARLOS.csv")
+# Lectura de datos
+datos = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/analisis-riesgo/indicadores-vulnerabilidad-NICOYA.csv")
 
-san_carlos
 
+# ### Tabla de datos por UGM
 
 # In[31]:
 
 
-# Estructura
-san_carlos.info()
+# Despliegue de datos
+datos
 
-
-# ### Gráficos
 
 # In[32]:
 
 
-# Gráfico de un subconjunto
-san_carlos_s01 = san_carlos[["HOMBRES", "MUJERES"]]
+datos.info()
 
-san_carlos_s01.plot(figsize=(20,7))
-
-
-# ### Histogramas
-# Muestran la distribución de una variable numérica.
 
 # In[33]:
 
 
-# Histograma de la variable INDICE_VULNERABILIDAD_INTEGRADO
-san_carlos["INDICE_VULNERABILIDAD_INTEGRADO"].plot(kind = 'hist')
+datos_belennosarita = datos[datos["COD_DIST"] == 50207]
+
+datos_belennosarita.sample(5)
 
 
-# ### Gráficos de dispersión (*scatterplots*)
-# Muestran la relación entre dos variables numéricas.
+# ### Distribución porcentual de la población a nivel de distrito
 
 # In[34]:
 
 
-# Gráfico de dispersión HOMBRES e INDICE_VULNERABILIDAD_INTEGRADO
-san_carlos.plot(kind = 'scatter', x = 'HOMBRES', y = 'INDICE_VULNERABILIDAD_INTEGRADO')
+# Suma de población por distrito
+poblacion_x_distrito = datos.groupby(datos['DISTRITO'])['TOTAL'].sum()
 
+poblacion_x_distrito
 
-# ### Análisis de correlación
 
 # In[35]:
 
 
-# Correlaciones de un subconjunto de datos
-san_carlos_s01.corr()
+# Gráfico de pastel
+poblacion_x_distrito.plot.pie()
 
+
+# ### Características de la población dependiente
 
 # In[36]:
 
 
-# Correlaciones de todo el conjunto de datos
-san_carlos.corr()
+# Suma de población dependiente por distrito
+poblaciondependiente_x_distrito = datos.groupby(datos['DISTRITO'])['TOTAL_DEPENDIENTE'].sum()
+
+poblaciondependiente_x_distrito
 
 
-# In[ ]:
+# In[37]:
 
 
+# Gráfico de barras
+poblaciondependiente_x_distrito.plot.bar()
 
+
+# #### Necesidades básicas insatisfechas
+
+# ##### Belén de Nosarita
+
+# In[38]:
+
+
+datos_belennosarita_x_nbi = datos_belennosarita(datos['DISTRITO'])['TOTAL'].sum()
 

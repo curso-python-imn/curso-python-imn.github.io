@@ -21,4 +21,5 @@ chapters:
 - file: 15-python-archivos
 - file: 16-introduccionanalisisdatospython
 - file: 17-pandas
+- file: 18-geopandas
 - file: recursos
