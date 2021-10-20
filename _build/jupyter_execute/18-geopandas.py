@@ -128,6 +128,22 @@ paises.loc[paises["pop_est"] >= 1000000000, ["name", "pop_est"]]
 paises.plot(column = "pop_est")
 
 
+# ## Operaciones de análisis
+
+# In[10]:
+
+
+# Carga de datos de distritos de Costa Rica
+
+# Desde un shapefile local descomprimido
+# distritos = gpd.read_file("datos/division-territorial/LIMITE_POLITICO_ADMINISTRATIVO_region.shp")
+
+# Desde un shapefile local comprimido
+distritos = gpd.read_file("zip://./datos/division-territorial/limite_politico_administrativo_region.zip")
+
+distritos.plot()
+
+
 # In[ ]:
 
 

@@ -358,6 +358,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-analisis">
+   Operaciones de análisis
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -960,6 +965,30 @@ memory usage: 8.4+ KB
 </div>
 <img alt="_images/18-geopandas_25_1.png" src="_images/18-geopandas_25_1.png" />
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="operaciones-de-analisis">
+<h2>Operaciones de análisis<a class="headerlink" href="#operaciones-de-analisis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de datos de distritos de Costa Rica</span>
+
+<span class="c1"># Desde un shapefile local descomprimido</span>
+<span class="c1"># distritos = gpd.read_file(&quot;datos/division-territorial/LIMITE_POLITICO_ADMINISTRATIVO_region.shp&quot;)</span>
+
+<span class="c1"># Desde un shapefile local comprimido</span>
+<span class="n">distritos</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zip://./datos/division-territorial/limite_politico_administrativo_region.zip&quot;</span><span class="p">)</span>
+
+<span class="n">distritos</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/18-geopandas_27_1.png" src="_images/18-geopandas_27_1.png" />
 </div>
 </div>
 </div>
