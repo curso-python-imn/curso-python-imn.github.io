@@ -135,11 +135,15 @@ paises.plot(column = "pop_est")
 
 # Carga de datos de distritos de Costa Rica
 
+# Desde un shapefile remoto comprimido
+distritos = gpd.read_file("https://github.com/curso-python-imn/curso-python-imn.github.io/raw/main/datos/division-territorial/limite_politico_administrativo_region.zip", encoding = "utf-8")
+
 # Desde un shapefile local descomprimido
 # distritos = gpd.read_file("datos/division-territorial/LIMITE_POLITICO_ADMINISTRATIVO_region.shp")
 
 # Desde un shapefile local comprimido
-distritos = gpd.read_file("zip://./datos/division-territorial/limite_politico_administrativo_region.zip")
+# distritos = gpd.read_file("zip://./datos/division-territorial/limite_politico_administrativo_region.zip")
+
 
 distritos.plot()
 
