@@ -974,21 +974,47 @@ memory usage: 8.4+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de datos de distritos de Costa Rica</span>
 
+<span class="c1"># Desde un shapefile remoto comprimido</span>
+<span class="n">distritos</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;https://github.com/curso-python-imn/curso-python-imn.github.io/raw/main/datos/division-territorial/limite_politico_administrativo_region.zip&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
 <span class="c1"># Desde un shapefile local descomprimido</span>
 <span class="c1"># distritos = gpd.read_file(&quot;datos/division-territorial/LIMITE_POLITICO_ADMINISTRATIVO_region.shp&quot;)</span>
 
 <span class="c1"># Desde un shapefile local comprimido</span>
-<span class="n">distritos</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zip://./datos/division-territorial/limite_politico_administrativo_region.zip&quot;</span><span class="p">)</span>
+<span class="c1"># distritos = gpd.read_file(&quot;zip://./datos/division-territorial/limite_politico_administrativo_region.zip&quot;)</span>
+
 
 <span class="n">distritos</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_159386</span><span class="o">/</span><span class="mf">363968639.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Desde un shapefile remoto comprimido</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">distritos</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;https://github.com/curso-python-imn/curso-python-imn.github.io/raw/main/datos/division-territorial/limite_politico_administrativo_region.zip&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Desde un shapefile local descomprimido</span>
+
+<span class="nn">~/miniconda3/envs/curso-python-imn/lib/python3.9/site-packages/geopandas/io/file.py</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, rows, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span> 
+<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="k">with</span> <span class="n">fiona_env</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">160</span>         <span class="k">with</span> <span class="n">reader</span><span class="p">(</span><span class="n">path_or_bytes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">features</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> 
+<span class="g g-Whitespace">    </span><span class="mi">162</span>             <span class="c1"># In a future Fiona release the crs attribute of features will</span>
+
+<span class="nn">~/miniconda3/envs/curso-python-imn/lib/python3.9/site-packages/fiona/collection.py</span> in <span class="ni">__init__</span><span class="nt">(self, bytesbuf, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> 
+<span class="g g-Whitespace">    </span><span class="mi">554</span>         <span class="c1"># Instantiate the parent class.</span>
+<span class="ne">--&gt; </span><span class="mi">555</span>         <span class="nb">super</span><span class="p">(</span><span class="n">BytesCollection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">virtual_file</span><span class="p">,</span> <span class="n">vsi</span><span class="o">=</span><span class="n">filetype</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>                                               <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span> 
+
+<span class="ne">TypeError</span>: fiona.collection.Collection.__init__() got multiple values for keyword argument &#39;encoding&#39;
 </pre></div>
 </div>
-<img alt="_images/18-geopandas_27_1.png" src="_images/18-geopandas_27_1.png" />
 </div>
 </div>
 </div>
