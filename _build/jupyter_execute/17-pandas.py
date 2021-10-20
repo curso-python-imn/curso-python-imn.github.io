@@ -399,13 +399,3 @@ poblaciondependiente_x_distrito
 # Gráfico de barras
 poblaciondependiente_x_distrito.plot.bar()
 
-
-# #### Necesidades básicas insatisfechas
-
-# ##### Belén de Nosarita
-
-# In[38]:
-
-
-datos_belennosarita_x_nbi = datos_belennosarita(datos['DISTRITO'])['TOTAL'].sum()
-

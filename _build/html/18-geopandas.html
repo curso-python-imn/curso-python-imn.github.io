@@ -312,9 +312,51 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplos-de-uso">
-   Ejemplos de uso
+  <a class="reference internal nav-link" href="#estructuras-de-datos">
+   Estructuras de datos
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-basicas">
+   Operaciones básicas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-file-carga-de-datos">
+     read_file() - carga de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#info-informacion-general-sobre-un-conjunto-de-datos">
+     info() - información general sobre un conjunto de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos">
+     head(), tail(), sample() - despliegue de filas de un conjunto de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-columnas">
+     Selección de columnas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-filas">
+     Selección de filas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-filas-y-columnas-en-la-misma-expresion">
+     Selección de filas y columnas en la misma expresión
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-mapeo">
+     plot() - mapeo
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -394,8 +436,14 @@ pip install geopandas
 </div>
 </div>
 </div>
-<div class="section" id="ejemplos-de-uso">
-<h2>Ejemplos de uso<a class="headerlink" href="#ejemplos-de-uso" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="estructuras-de-datos">
+<h2>Estructuras de datos<a class="headerlink" href="#estructuras-de-datos" title="Permalink to this headline">¶</a></h2>
+<p>Las dos principales estructuras de datos de geopandas son geoseries y geodataframes.</p>
+</div>
+<div class="section" id="operaciones-basicas">
+<h2>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="read-file-carga-de-datos">
+<h3>read_file() - carga de datos<a class="headerlink" href="#read-file-carga-de-datos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lectura de datos de países</span>
@@ -537,6 +585,36 @@ pip install geopandas
 <p>177 rows × 6 columns</p>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="info-informacion-general-sobre-un-conjunto-de-datos">
+<h3>info() - información general sobre un conjunto de datos<a class="headerlink" href="#info-informacion-general-sobre-un-conjunto-de-datos" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+RangeIndex: 177 entries, 0 to 176
+Data columns (total 6 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   pop_est     177 non-null    int64   
+ 1   continent   177 non-null    object  
+ 2   name        177 non-null    object  
+ 3   iso_a3      177 non-null    object  
+ 4   gdp_md_est  177 non-null    float64 
+ 5   geometry    177 non-null    geometry
+dtypes: float64(1), geometry(1), int64(1), object(3)
+memory usage: 8.4+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos">
+<h3>head(), tail(), sample() - despliegue de filas de un conjunto de datos<a class="headerlink" href="#head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Muestra de 10 filas</span>
@@ -666,6 +744,209 @@ pip install geopandas
 </table>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="seleccion-de-columnas">
+<h3>Selección de columnas<a class="headerlink" href="#seleccion-de-columnas" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_est&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>pop_est</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fiji</td>
+      <td>920938</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tanzania</td>
+      <td>53950935</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>W. Sahara</td>
+      <td>603253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Canada</td>
+      <td>35623680</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>United States of America</td>
+      <td>326625791</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Serbia</td>
+      <td>7111024</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>Montenegro</td>
+      <td>642550</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>Kosovo</td>
+      <td>1895250</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Trinidad and Tobago</td>
+      <td>1218208</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>S. Sudan</td>
+      <td>13026129</td>
+    </tr>
+  </tbody>
+</table>
+<p>177 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="seleccion-de-filas">
+<h3>Selección de filas<a class="headerlink" href="#seleccion-de-filas" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Países con población estimada mayor o igual a mil millones</span>
+<span class="n">paises</span><span class="p">[</span><span class="n">paises</span><span class="p">[</span><span class="s2">&quot;pop_est&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1000000000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop_est</th>
+      <th>continent</th>
+      <th>name</th>
+      <th>iso_a3</th>
+      <th>gdp_md_est</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>1281935911</td>
+      <td>Asia</td>
+      <td>India</td>
+      <td>IND</td>
+      <td>8721000.0</td>
+      <td>POLYGON ((97.32711 28.26158, 97.40256 27.88254...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>1379302771</td>
+      <td>Asia</td>
+      <td>China</td>
+      <td>CHN</td>
+      <td>21140000.0</td>
+      <td>MULTIPOLYGON (((109.47521 18.19770, 108.65521 ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="seleccion-de-filas-y-columnas-en-la-misma-expresion">
+<h3>Selección de filas y columnas en la misma expresión<a class="headerlink" href="#seleccion-de-filas-y-columnas-en-la-misma-expresion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">paises</span><span class="p">[</span><span class="s2">&quot;pop_est&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1000000000</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_est&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>pop_est</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>India</td>
+      <td>1281935911</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>China</td>
+      <td>1379302771</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plot-mapeo">
+<h3>plot() - mapeo<a class="headerlink" href="#plot-mapeo" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa de coropletas</span>
@@ -677,7 +958,8 @@ pip install geopandas
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/18-geopandas_13_1.png" src="_images/18-geopandas_13_1.png" />
+<img alt="_images/18-geopandas_25_1.png" src="_images/18-geopandas_25_1.png" />
+</div>
 </div>
 </div>
 </div>

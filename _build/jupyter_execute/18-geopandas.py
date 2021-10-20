@@ -61,7 +61,12 @@ import matplotlib.pyplot as plt
 gpd.__version__
 
 
-# ## Ejemplos de uso
+# ## Estructuras de datos
+# Las dos principales estructuras de datos de geopandas son geoseries y geodataframes.
+
+# ## Operaciones básicas
+
+# ### read_file() - carga de datos
 
 # In[3]:
 
@@ -72,14 +77,51 @@ paises = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 paises
 
 
+# ### info() - información general sobre un conjunto de datos
+
 # In[4]:
+
+
+paises.info()
+
+
+# ### head(), tail(), sample() - despliegue de filas de un conjunto de datos
+
+# In[5]:
 
 
 # Muestra de 10 filas
 paises.head(10)
 
 
-# In[5]:
+# ### Selección de columnas
+
+# In[6]:
+
+
+paises[["name", "pop_est"]]
+
+
+# ### Selección de filas
+
+# In[7]:
+
+
+# Países con población estimada mayor o igual a mil millones
+paises[paises["pop_est"] >= 1000000000]
+
+
+# ### Selección de filas y columnas en la misma expresión
+
+# In[8]:
+
+
+paises.loc[paises["pop_est"] >= 1000000000, ["name", "pop_est"]]
+
+
+# ### plot() - mapeo
+
+# In[9]:
 
 
 # Mapa de coropletas
