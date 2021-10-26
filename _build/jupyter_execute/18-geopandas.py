@@ -46,11 +46,15 @@
 
 
 # Carga de bibliotecas
+import math
+
 import pandas as pd
-import numpy as np
 import geopandas as gpd
-from shapely.geometry import Point
+
 import folium
+from folium import Choropleth, Circle, Marker
+from folium.plugins import HeatMap, MarkerCluster
+
 import matplotlib
 import matplotlib.pyplot as plt
 
@@ -185,6 +189,8 @@ caminos.plot(ax=ax, color='blue')
 
 # ### Mapeo con folium
 
+# #### Opciones básicas de configuración
+
 # In[14]:
 
 
@@ -217,6 +223,8 @@ m = folium.Map(
 
 m
 
+
+# #### Manejo de capas base
 
 # Por defecto, Folium utiliza OpenStreetMap como mapa base. Pueden elegirse otros mapas base mediante el parámetro tiles, el cual tiene un conjunto de valores predeterminados:
 # 
@@ -324,6 +332,8 @@ m = folium.Map(
 m
 
 
+# #### Controles del mapa
+
 # In[24]:
 
 
@@ -377,11 +387,16 @@ folium.LayerControl().add_to(m)
 m
 
 
+# #### Grabación del mapa en el disco
+
 # In[26]:
 
 
-m.save("/home/mfvargas/mapa.html")
+# Grabación de mapa
+# m.save("/home/mfvargas/mapa.html")
 
+
+# #### Mapas con múltiples capas
 
 # In[27]:
 
@@ -392,7 +407,7 @@ m.save("/home/mfvargas/mapa.html")
 m = folium.Map(location=[10, -84], tiles='CartoDB positron', zoom_start=7)
 
 # Se añaden al mapa las capas GeoJson
-folium.GeoJson(data="https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/red-caminos/redcamino2008crtm05.geojson", name='Cantones').add_to(m)
+folium.GeoJson(data="https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/red-caminos/redcamino2008wgs84.geojson", name='Cantones').add_to(m)
 
 # Control de capas
 folium.LayerControl().add_to(m)
@@ -400,6 +415,117 @@ folium.LayerControl().add_to(m)
 # Despliegue del mapa
 m
 
+
+# #### Mapeo de puntos de un archivo CSV
+
+# In[28]:
+
+
+# Lectura del archivo
+felidae = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/gbif/felidae.csv", sep="\t")
+
+felidae.head()
+
+
+# In[29]:
+
+
+# Creación del mapa
+m = folium.Map(location=[9.6, -84.2], tiles='CartoDB positron', zoom_start=8)
+
+# Adición de marcadores
+for idx, row in felidae.iterrows():
+    Marker([row['decimalLatitude'], row['decimalLongitude']], popup=row['species']).add_to(m)
+
+# Despliegue del mapa
+m
+
+
+# **Ejercicio:** incluya en la ventana emergente ("popup") de los puntos, la información relacionda con la localidad y la fecha.
+
+# #### Mapas de puntos agrupados ("cluster maps")
+
+# In[30]:
+
+
+# Creación del mapa base
+m = folium.Map(location=[9.6, -84.2], tiles='CartoDB positron', zoom_start=8)
+
+# Adición de puntos agrupados
+mc = MarkerCluster()
+for idx, row in felidae.iterrows():
+    if not math.isnan(row['decimalLongitude']) and not math.isnan(row['decimalLatitude']):
+        mc.add_child(Marker([row['decimalLatitude'], row['decimalLongitude']], popup=row['species']))
+m.add_child(mc)
+
+# Despliegue del mapa
+m
+
+
+# #### Mapas de burbuja ("bubble maps")
+
+# In[31]:
+
+
+# Creación del mapa base
+m = folium.Map(location=[9.6, -84.2], tiles='CartoDB positron', zoom_start=8)
+
+# Adición de las "burbujas"
+for i in range(0,len(felidae)):
+    Circle(
+        location=[felidae.iloc[i]['decimalLatitude'], felidae.iloc[i]['decimalLongitude']],
+        radius=1000,
+        color="black", 
+        popup=row['species']).add_to(m)
+
+# Despliegue del mapa
+m
+
+
+# El tamaño y el color de los puntos puede utilizarse para diferenciar algún atributo de los datos.
+
+# In[32]:
+
+
+# Creación del mapa base
+m = folium.Map(location=[9.6, -84.2], tiles='CartoDB positron', zoom_start=8)
+
+def color_especie(especie):
+    if especie == "Panthera onca":
+        return 'orange'
+    else:
+        return 'black'
+
+# Adición de las "burbujas"
+for i in range(0,len(felidae)):
+    Circle(
+        location=[felidae.iloc[i]['decimalLatitude'], felidae.iloc[i]['decimalLongitude']],
+        radius=1000,
+        color=color_especie(felidae.iloc[i]['species']),
+        popup=felidae.iloc[i]['species']).add_to(m)
+
+# Despliegue del mapa
+m
+
+
+# **Ejercicio:** Modifique la función color_especie() para que retorne un color diferente por cada especie de felino.
+
+# #### Mapas de calor ("heatmaps")
+
+# In[33]:
+
+
+# Creación del mapa base
+m = folium.Map(location=[9.6, -84.2], tiles='CartoDB positron', zoom_start=8)
+
+# Mapa de color
+HeatMap(data=felidae[['decimalLatitude', 'decimalLongitude']], radius=10).add_to(m)
+
+# Despliegue del mapa
+m
+
+
+# #### Mapas de coropletas ("choropleth maps")
 
 # In[ ]:
 
