@@ -527,6 +527,46 @@ m
 
 # #### Mapas de coropletas ("choropleth maps")
 
+# In[34]:
+
+
+# Indicadores de San Carlos
+indicadores = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/analisis-riesgo/indicadores-vulnerabilidad-SAN_CARLOS.csv")
+
+indicadores
+
+
+# In[35]:
+
+
+# UGM de San Carlos
+ugm_sancarlos = gpd.read_file("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/ugm/ugm_sancarlos_wgs84.geojson")
+
+ugm_sancarlos.head()
+
+
+# In[36]:
+
+
+# Creación del mapa base
+m = folium.Map(location=[10.6, -84.4], tiles='CartoDB positron', zoom_start=10)
+
+m.choropleth(
+    geo_data=ugm_sancarlos,
+    data=indicadores,
+    columns=['UGM', 'TOTAL'],
+    bins=8,
+    key_on='feature.properties.UGM_LLAVE',
+    fill_color='Reds', 
+    fill_opacity=0.5, 
+    line_opacity=1,
+    legend_name='Población total',
+    smooth_factor=0)
+
+# Despliegue del mapa
+m
+
+
 # In[ ]:
 
 
