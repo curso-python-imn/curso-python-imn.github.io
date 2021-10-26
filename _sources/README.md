@@ -16,7 +16,7 @@ $ conda activate curso-python-imn
 # Instalación de módulos
 $ conda config --env --add channels conda-forge
 $ conda config --env --set channel_priority strict
-$ conda install jupyter-book ghp-import geopandas
+$ conda install jupyter-book ghp-import geopandas folium
 
 # Desactivación del ambiente
 $ conda deactivate
