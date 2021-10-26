@@ -380,6 +380,12 @@ m
 # In[26]:
 
 
+m.save("/home/mfvargas/mapa.html")
+
+
+# In[27]:
+
+
 # Mapa con capa base y capa vectorial
 
 # Creación del mapa
