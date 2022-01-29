@@ -393,7 +393,7 @@ m
 
 
 # Grabación de mapa
-# m.save("/home/mfvargas/mapa.html")
+m.save("/home/mfvargas/mapa2.html")
 
 
 # #### Mapas con múltiples capas
